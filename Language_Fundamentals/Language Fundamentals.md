@@ -84,7 +84,7 @@ public class Temp {
 >>>* 123total ❌
 >>>* total123 ✔
 >>>* ca$h ✔
->>>* _$_$_$_$_$ ✔
+>>>* $__$____$ ✔
 >>>* all@hands ❌
 >>>* Java2Share ✔
 >>>* Integer ✔
