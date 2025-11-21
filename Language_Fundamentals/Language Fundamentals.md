@@ -293,8 +293,120 @@ public class Temp {
 * Short data type is best suitable for 16-bit processors like 8085. But, the processors are completely outdated and hence, corresponding short data type is also outdated data type.
 ### int
 * The most commonly used data type in java is int.
-* size: 4 byte (32 bits)
+* size: 4 bytes (32 bits)
 * Range: -2<sup>31</sup> to 2<sup>31</sup>-1 => [-2147483648 to 2147483647]
+### long
+* Sometimes int may not enough to hold big values, then we should go for long type.
+
+**Ex:**
+1. The amount of distance travelled by light in 1000 days, to hold this value int may not enough. We should go for long data type.
+>>>long l = 126000 * 60 * 60 * 24 *1000
+2. The number of characters present in a big file may exceed int range. Hence, the return type of length method is long (but not int).
+>>>long l = f.length()
+* size: 8 bytes (64 bits)
+* Range: -2<sup>63</sup> to 2<sup>63</sup>-1
+
+**Note:**
+* All the above data types(byte, short, int, long) meant for representing integral values.
+* If we want to represent floating point values, then we should go for floating point data types.
+## Floating Point Data Types
+|                   |float             |double              |
+|-------------------|:-----------------|--------------------|
+|Accuracy           |5 to 6            |14 to 15            |
+|Following Precision|Single Precision  |Double Precision    |
+|Size               |4 bytes           |8 bytes             |
+|Range              |-3.4e38 to 3.4e38 |-1.7e308 to 1.7e308 |
+### boolean Data Type
+* Size: Not applicable (virtual Machine Dependent)
+* Range: Not applicable (But allowed values are true or false)
+```java
+public class Temp {
+    public static void main(String[] args) {
+        boolean b = true;
+        boolean c = 0;
+        /*
+        error: incompatible types: int cannot be converted to boolean
+        boolean c = 0;
+                    ^
+        */
+       boolean d = True;
+       /*
+           error: cannot find symbol
+           boolean d = True;
+                       ^
+        symbol:   variable True
+        location: class Temp
+       */
+        boolean e = "True";
+        /*
+        error: incompatible types: String cannot be converted to boolean
+        boolean e = "True";
+        */
+    }
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x = 0;
+        int y = 1;
+        if (x) {
+            System.out.println("Hello");
+        }
+        else{
+            System.out.println("Hi");
+        }
+        /*
+        error: incompatible types: int cannot be converted to boolean
+        if (x) {
+            ^
+        */
+        while (y) {
+            System.out.println("Bye");
+        }
+        /*
+        error: incompatible types: int cannot be converted to boolean
+        while (y) {
+               ^
+        */
+    }
+}
+```
+### char Data Type
+* Old languages (like C/C++) are ASCII code based and the number of different allowed ASCII code characters are <= 256.
+* To represent these 256 characters, 8 bits are enough. Hence, the size of char in old languages is 1 byte (8 bits).
+* But java is unicode based and the number of different unicode characters are greater than 256 and less than or equal to 65536.
+* To represent, these many characters 8 bits may not enough and compulsory we should go for 16 bits.
+* Hence, the size of char is 2 bytes.
+* size: 2 bytes
+* Range: 0 to 65535
+### Summary of Java Primitive Data Types
+|Data Type|Size   |Range                                                                  |Wrapper Class|Default Value|
+|---------|-------|-----------------------------------------------------------------------|-------------|-------------|
+|byte     |1 byte |-2<sup>7</sup> to 2<sup>7</sup>-1 (128 to 127)                         |Byte         |0            |
+|short    |2 bytes|-2<sup>15</sup> to 2<sup>15</sup>-1 (-32768 to 32767)                  |Short        |0            |
+|int      |4 bytes|-2<sup>31</sup> to 2<sup>31</sup>-1 (-2147483648 to 2147483647)        |Integer      |0            |
+|long     |8 bytes|-2<sup>63</sup> to 2<sup>63-1                                          |Long         |0            |
+|float    |4 bytes|-3.4e38 to 3.4e38                                                      |Float        |0.0          |
+|double   |8 bytes|-1.7e308 to 1.7e308                                                    |Double       |0.0          |
+|boolean  |NA     |NA (But allowed values are true/false)                                 |Boolean      |false        |
+|char     |2 bytes|0 to 65535                                                             |character    |" "          |
+
+Note: null is the default value for object reference and we can not apply for primitives. If we are trying to use for primitive, then we will get compile time error.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        char ch = null;
+        /*
+        error: incompatible types: <null> cannot be converted to char
+        char ch = null;
+                  ^
+        */
+    }
+}
+```
+ 
+
 
 
 
