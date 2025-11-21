@@ -215,7 +215,7 @@ Conclusions:
 ## Primitive Data Types
 ![alt text](image-1.png)
 * Except boolean and char, remaining data types are considered as signed data types because, we can represent both positive and negative numbers.
-### Byte:
+### byte:
 * size: 1 byte (8 bits)
 * MAX_Value: +127
 * MIN_Value: -128
@@ -233,38 +233,68 @@ public class Temp {
           byte c =127;
           System.out.println(c); //127
           byte d = 128;
-          System.out.println(d);
           /*
           error: incompatible types: possible lossy conversion from int to byte
           byte d = 128;
                    ^
           */
           byte e = 10.5;
-          System.out.println(e);
           /*
           error: incompatible types: possible lossy conversion from double to byte
           byte e = 10.5;
                    ^
            */
           byte f = true;
-          System.out.println(f);
           /*
-          incompatible types: boolean cannot be converted to byte
+          error: incompatible types: boolean cannot be converted to byte
           byte f = true;
                    ^
            */
           byte g = "rudra";
-          System.out.println(g);
           /*
           error: incompatible types: String cannot be converted to byte
           byte g = "rudra";
                    ^
            */
      }
-     
 }
 ```
-
+* Byte is the best choice if we want to handle data in terms of streams either from the file or from the network (File supported form or network supported form is byte).
+### short:
+* This is the most rarely used data type in java.
+* size: 2 byte (16 bits)
+* Range: -2<sup>15</sup> to 2<sup>15</sup>-1 => [-32768 to 32767]
+```java
+public class Temp {
+    public static void main(String[] args) {
+        short s = 32767;
+        System.out.println(s);
+        short t = 32768;
+        /*
+        error: incompatible types: possible lossy conversion from int to short
+        short t = 32768;
+                  ^
+         */
+        short u = 10.5;
+        /*
+        error: incompatible types: possible lossy conversion from double to short
+        short u = 10.5;
+                  ^
+         */
+        short v = true;
+        /*
+        error: incompatible types: boolean cannot be converted to short
+        short v = true;
+                  ^
+         */
+    }
+}
+```
+* Short data type is best suitable for 16-bit processors like 8085. But, the processors are completely outdated and hence, corresponding short data type is also outdated data type.
+### int
+* The most commonly used data type in java is int.
+* size: 4 byte (32 bits)
+* Range: -2<sup>31</sup> to 2<sup>31</sup>-1 => [-2147483648 to 2147483647]
 
 
 
