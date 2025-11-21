@@ -153,16 +153,17 @@ public class Temp {
 * But in C language, return type is optional and default return type in int.
 ## Unused Keywords:
 ### goto:
-Usage of goto created several problems in old languages and hence, SUN people banned this keyword in java.
+>Usage of goto created several problems in old languages and hence, SUN people banned this keyword in java.
 ### const:
-Use final instead of const.
+>Use final instead of const.  
+
 Note: goto and const are unused keywords. If we are trying to use, we will get compile time error.
 ## Reserved Literals:
-* true, false - values for boolean data type
-* null - default value for object reference
+>* true, false - values for boolean data type
+>* null - default value for object reference
 ## enum Keyword:
-* It is released in version 1.5
-* We can use enum to define a group of named constants.
+>* It is released in version 1.5
+>* We can use enum to define a group of named constants.
 >Ex:
 ```java
  enum month{
@@ -177,34 +178,29 @@ Conclusions:
     * assert - version 1.4
     * enum - version 1.5
 * strictfp but not strictFp
-instanceof but not instanceOf
-synchronized but not synchronize
-extends but not extend
-implements but not implement
-import but not imports
-const but not constant
+* instanceof but not instanceOf
+* synchronized but not synchronize
+* extends but not extend
+* implements but not implement
+* import but not imports
+* const but not constant
 1. which of the following list contains only java reserved words?
-* new, ~~delete~~
-* goto, ~~constant~~
-* break, continue, return, ~~exit~~
-* final, finally, ~~finalize~~
-* throw, throws, ~~thrown~~
-* ~~notify, notifyall~~
-* implements, extends, ~~imports~~
-* ~~sizeof~~, instanceof
-* ~~instanceOf, strictFp~~
-* byte, short, ~~Int~~
-* None of the above
-
-Answer: None of the above
-              Bold words are java reserved words
+>>* new, ~~delete~~
+>>* goto, ~~constant~~
+>>* break, continue, return, ~~exit~~
+>>* final, finally, ~~finalize~~
+>>* throw, throws, ~~thrown~~
+>>* ~~notify, notifyall~~
+>>* implements, extends, ~~imports~~
+>>* ~~sizeof~~, instanceof
+>>* ~~instanceOf, strictFp~~
+>>* byte, short, ~~Int~~
+>>* None of the above ✔
 
 2. Which of the following are java reserved words?
-* **public**
-* **static**
-* **void**
-* main - name of the method
-* String - its a predefined class
-* args  -  name of the variable
-
- Answer: Bold words are java reserved words
+>>* public ✔
+>>* static ✔
+>>* void ✔
+>>* main - name of the method
+>>* String - its a predefined class
+>>* args  -  name of the variable
