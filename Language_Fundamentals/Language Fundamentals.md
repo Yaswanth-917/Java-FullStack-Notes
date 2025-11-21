@@ -184,16 +184,16 @@ implements but not implement
 import but not imports
 const but not constant
 1. which of the following list contains only java reserved words?
-* **new**, delete
-* **goto**, constant
-* **break, continue, return**, exit
-* **final, finally**, finalize
-* **throw, throws**, thrown
-* notify, notifyall
-* **implements, extends**, imports
-* sizeof, **instanceof**
-* instanceOf, strictFp
-* **byte, short**, Int
+* new, ~~delete~~
+* goto, ~~constant~~
+* break, continue, return, ~~exit~~
+* final, finally, ~~finalize~~
+* throw, throws, ~~thrown~~
+* ~~notify, notifyall~~
+* implements, extends, ~~imports~~
+* ~~sizeof~~, instanceof
+* ~~instanceOf, strictFp~~
+* byte, short, ~~Int~~
 * None of the above
 
 Answer: None of the above
