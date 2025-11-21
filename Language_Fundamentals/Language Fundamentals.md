@@ -220,6 +220,7 @@ Conclusions:
 * MAX_Value: +127
 * MIN_Value: -128
 * Range: -128 to 127
+
 ![alt text](image-2.png) 
 * The most significant bit act as sign bit.
 * 0 means +ve number and 1 means -ve number
@@ -263,7 +264,7 @@ public class Temp {
      
 }
 ```
-    
+
 
 
 
