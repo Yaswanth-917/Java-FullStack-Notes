@@ -42,7 +42,7 @@ public class Temp {
 >>>**Ex:**
 >>>>total123 ✔  
 >>>>123total ❌
->3. Java identifiers are case sensitive. Ofcourse, Java language itself is treated as case sensitive programming language.
+>3. Java identifiers are **case sensitive**. Ofcourse, Java language itself is treated as **case sensitive programming language**.
 >>>**Ex:**
 ```java
 public class Temp {
@@ -54,7 +54,7 @@ public class Temp {
 }
 ```
 >4. There is no length limit for java identifiers. But, it is not recommended to take too lengthy identifiers.
->5. We can not use reserved words as identifiers.
+>5. We **can not use reserved words** as identifiers.
 >>>**Ex:**
 ```java
 public class Temp {
@@ -64,7 +64,7 @@ public class Temp {
     }
 }
  ```
->6. All predefined java class names and interface names we can use as identifiers. But, 
+>6. All predefined java class names and interface names we can use as identifiers. 
 >>>**Ex:**
 ```java
 public class Temp {
@@ -164,26 +164,26 @@ Note: goto and const are unused keywords. If we are trying to use, we will get c
 ## enum Keyword:
 >* It is released in version 1.5
 >* We can use enum to define a group of named constants.
->Ex:
+>**Ex:**
 ```java
  enum month{
         Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
 }
 ```
-Conclusions:
+**Conclusions:**
 * All 53 reserved words in java contains only lower case alphabet symbols.
 * In java, we have only new keyword and there is no delete keyword because, destruction of useless objects is the responsibilty of garbage collector.
 * The following are new keyowrds in java:
     * strictfp - version 1.2
     * assert - version 1.4
     * enum - version 1.5
-* strictfp but not strictFp
-* instanceof but not instanceOf
-* synchronized but not synchronize
-* extends but not extend
-* implements but not implement
-* import but not imports
-* const but not constant
+* *strictfp* but not strictFp
+* *instanceof* but not instanceOf
+* *synchronized* but not synchronize
+* *extends* but not extend
+* *implements* but not implement
+* *import* but not imports
+* *const* but not constant
 1. which of the following list contains only java reserved words?
 >>* new, ~~delete~~
 >>* goto, ~~constant~~
@@ -209,12 +209,12 @@ Conclusions:
 * In java, every variable and every expression has some type.
 * Each and every data type is clearly defined.
 * Every assignment should be checked by compiler for type compatibility.
-* Because of above reasons, we can conclude java language is strongly typed programming language.
-* Java is not considered as pure object oriented programming language because, several OOP features are not satisfied by java (like Operator Overloading, Multiple Inheritance, etc).
+* Because of above reasons, we can conclude java language is **strongly typed programming language**.
+* Java is not considered as **pure object oriented programming language because, several OOP features are not satisfied** by java (like Operator Overloading, Multiple Inheritance, etc).
 * Moreover, we are depending on primitive data types which are non-objects.
 ## Primitive Data Types
 ![alt text](image-1.png)
-* Except boolean and char, remaining data types are considered as signed data types because, we can represent both positive and negative numbers.
+* Except *boolean and char, remaining data types* are considered as *signed data* types because, we can represent both positive and negative numbers.
 ### byte:
 * size: 1 byte (8 bits)
 * MAX_Value: +127
@@ -259,7 +259,7 @@ public class Temp {
      }
 }
 ```
-* Byte is the best choice if we want to handle data in terms of streams either from the file or from the network (File supported form or network supported form is byte).
+* *Byte* is the best choice if we want to handle data in terms of *streams* either from the file or from the network (File supported form or network supported form is byte).
 ### short:
 * This is the most rarely used data type in java.
 * size: 2 byte (16 bits)
@@ -290,7 +290,7 @@ public class Temp {
     }
 }
 ```
-* Short data type is best suitable for 16-bit processors like 8085. But, the processors are completely outdated and hence, corresponding short data type is also outdated data type.
+* Short data type is best *suitable for 16-bit processors* like 8085. But, the processors are completely outdated and hence, corresponding short data type is also outdated data type.
 ### int
 * The most commonly used data type in java is int.
 * size: 4 bytes (32 bits)
@@ -310,7 +310,7 @@ public class Temp {
 * All the above data types(byte, short, int, long) meant for representing integral values.
 * If we want to represent floating point values, then we should go for floating point data types.
 ## Floating Point Data Types
-|                   |float             |double              |
+|                   |**float**         |**double**          |
 |-------------------|:-----------------|--------------------|
 |Accuracy           |5 to 6            |14 to 15            |
 |Following Precision|Single Precision  |Double Precision    |
@@ -373,9 +373,9 @@ public class Temp {
 }
 ```
 ### char Data Type
-* Old languages (like C/C++) are ASCII code based and the number of different allowed ASCII code characters are <= 256.
+* *Old languages (like C/C++)* are *ASCII* code based and the number of different allowed ASCII code characters are <= 256.
 * To represent these 256 characters, 8 bits are enough. Hence, the size of char in old languages is 1 byte (8 bits).
-* But java is unicode based and the number of different unicode characters are greater than 256 and less than or equal to 65536.
+* But **java** is **unicode** based and the number of different unicode characters are greater than 256 and less than or equal to 65536.
 * To represent, these many characters 8 bits may not enough and compulsory we should go for 16 bits.
 * Hence, the size of char is 2 bytes.
 * size: 2 bytes
@@ -392,7 +392,7 @@ public class Temp {
 |boolean  |NA     |NA (But allowed values are true/false)                                 |Boolean      |false        |
 |char     |2 bytes|0 to 65535                                                             |character    |" "          |
 
-Note: null is the default value for object reference and we can not apply for primitives. If we are trying to use for primitive, then we will get compile time error.
+Note: *null* is the *default value for object reference* and we *can not apply for primitives*. If we are trying to use for primitive, then we will get compile time error.
 ```java
 public class Temp {
     public static void main(String[] args) {
