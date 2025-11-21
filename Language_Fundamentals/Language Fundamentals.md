@@ -204,3 +204,81 @@ Conclusions:
 >>* main - name of the method
 >>* String - its a predefined class
 >>* args  -  name of the variable
+
+# Data Types
+* In java, every variable and every expression has some type.
+* Each and every data type is clearly defined.
+* Every assignment should be checked by compiler for type compatibility.
+* Because of above reasons, we can conclude java language is strongly typed programming language.
+* Java is not considered as pure object oriented programming language because, several OOP features are not satisfied by java (like Operator Overloading, Multiple Inheritance, etc).
+* Moreover, we are depending on primitive data types which are non-objects.
+## Primitive Data Types
+![alt text](image-1.png)
+* Except boolean and char, remaining data types are considered as signed data types because, we can represent both positive and negative numbers.
+### Byte:
+* size: 1 byte (8 bits)
+* MAX_Value: +127
+* MIN_Value: -128
+* Range: -128 to 127
+![alt text](image-2.png) 
+* The most significant bit act as sign bit.
+* 0 means +ve number and 1 means -ve number
+* Positive number will be represented directly in a memory, whereas negative numbers will be represented in 2's complement form.
+```java
+public class Temp {
+     public static void main(String[] args) {
+          byte b = 10;
+          System.out.println(b); //10
+          byte c =127;
+          System.out.println(c); //127
+          byte d = 128;
+          System.out.println(d);
+          /*
+          error: incompatible types: possible lossy conversion from int to byte
+          byte d = 128;
+                   ^
+          */
+          byte e = 10.5;
+          System.out.println(e);
+          /*
+          error: incompatible types: possible lossy conversion from double to byte
+          byte e = 10.5;
+                   ^
+           */
+          byte f = true;
+          System.out.println(f);
+          /*
+          incompatible types: boolean cannot be converted to byte
+          byte f = true;
+                   ^
+           */
+          byte g = "rudra";
+          System.out.println(g);
+          /*
+          error: incompatible types: String cannot be converted to byte
+          byte g = "rudra";
+                   ^
+           */
+     }
+     
+}
+```
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
