@@ -405,8 +405,202 @@ public class Temp {
     }
 }
 ```
- 
+## Literals
+* A constant value which can be assigned to the variable is called literal.  
+**Ex:**  
+>>>>int x = 10;
 
+>>int - data type/keyword  
+>>x - name of variable/identifier  
+>>10 - constant value/literal
+
+### Integral Literals
+* For integral data types (byte, short, int, long), we can specify literal value in the following ways.
+1. Decimal Literals (Base - 10)
+>* Allowed digits are 0 to 9.  
+**Ex:**
+>>>>int x = 10;
+2. Octal Literals (Base - 8)
+>* Allowed digits are 0 to 7.
+>* Literal value should be prefixed with 0.  
+**Ex:**
+>>>>int x = 010;
+3. Hexadecimal Form (Base - 16)
+>* Allowed digits are 0 to 9, a to f.
+>* For extra digits (a to f), we can use both lower case and upper case characters. This is one of very few areas very java is not case sensitive.
+>* The literal value should be prefixed with *0x* or *0X*.  
+**Ex:**
+>>>>int x = 0x10;
+* These are only possible ways to specify literal value for integral data types.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x = 10;         //valid
+        int y = 0786;      //invalid
+        /*
+        error: illegal digit in an octal literal
+        int y = 0786;
+                  ^
+        */
+        int z = 0777;       //valid
+        int a = 0XFace;     //valid
+        int b = 0XBeef;     //valid
+        int c = 0XWack;     //invalid
+        /*
+        error: hexadecimal numbers must contain at least one hexadecimal digit
+        int c = 0XWack;
+                ^
+        error: ';' expected
+        int c = 0XWack;
+                  ^
+        */
+    }
+}
+```
+* By default every integral literal is of int type.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 010;
+        int z = 0X10;
+        System.out.println(x+"...."+y+"...."+z);
+        //10....8....16
+    }
+}
+```
+* But, we can specify explicitly as long type by suffixed with 'l' or 'L'.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x = 10;
+        long y = 010L;
+        long l =10;
+        /*
+        error: incompatible types: possible lossy conversion from long to int
+        int z = 0X10L;
+                ^
+        */
+       int z = 0X10L;
+    }
+}
+```
+* There is no direct way to specifying byte and short literals explicitly.
+* But, indirectly we can specify.
+* Whenever we are assigning integral literal to the byte varialbe and if the variable within the range of byte then, compiler treats it automatically as byte literal.
+* Similarly, short literal also.
+ ```java
+ public class Temp {
+    public static void main(String[] args) {
+        byte b = 10;
+        byte c = 127;
+        byte d = 128;
+        /*
+        error: incompatible types: possible lossy conversion from int to byte
+        byte d = 128;
+                 ^
+        */
+        short s = 32767;
+        short t = 32768;
+        /*
+        error: incompatible types: possible lossy conversion from int to short
+        short t = 32768;
+                  ^
+        */
+    }
+}
+```
+### Floating Point Literals
+* By default, every floating point literal is of double type.
+* Hence, we can not assign directly to the float variable.
+* But, we can specify floating point literal as float type by suffixed with 'f' or 'F'.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        float f = 123.456;
+        /*
+        error: incompatible types: possible lossy conversion from double to float
+        float f = 123.456;
+                  ^
+        */
+       float g = 123.456F;
+       double d = 123.456;
+    }
+}
+```
+* We can specify explicitly floating point literal as double type by suffixed with 'd' or 'D'.
+* Of course, these convention is not required.
+```java
+public class Temp {
+    public static void main(String[] args) {
+       double d = 123.456D;
+       System.out.println(d);   //123.456
+       float e = 123.456D;
+       /*
+       error: incompatible types: possible lossy conversion from double to float
+       float e = 123.456D;
+                 ^
+       */
+    }
+}
+```
+* We can specify floating point literals only in decimal form and we can not specify in octal and hexadecimal forms.
+```java
+public class Temp {
+    public static void main(String[] args) {
+       double d = 123.456D;
+       double e = 0123.456;
+       System.out.println(e);   //123.456
+       double f = 0X123.456;
+       /*
+       error: malformed floating-point literal
+       double f = 0X123.456;
+                  ^
+       */
+    }
+}
+```
+* We can assign integral literal directly to floating point variables and that integral literal can be specified either in decimal or octal or hexadecimal forms.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        double d = 10;
+        System.out.println(d); // 10
+        double e = 0XFace;
+        System.out.println(e); // 64206.0
+        double f = 0786.0;
+        System.out.println(f); // 786.0
+        double g = 0786;
+        /*
+        error: illegal digit in an octal literal
+        double g = 0786;
+                     ^
+        */
+        double h = 0XFace.0;
+        /*
+        error: malformed floating-point literal
+        double h = 0XFace.0;
+                   ^
+         */
+        double i = 0777;
+        System.out.println(i);  //511.0
+    }
+}
+```
+* We can not assign floating point literals to integral types.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        double d = 10;
+        int x = 10.0;
+        /*
+        error: incompatible types: possible lossy conversion from double to int
+        int x = 10.0;
+                ^
+        */
+    }
+}
+```
 
 
 
