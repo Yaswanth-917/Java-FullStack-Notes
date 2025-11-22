@@ -18,7 +18,7 @@ Welcome to the Java Full-Stack Notes repository! This repository is dedicated to
 
 ## About
 
-Prepared by [Your Name]. Ideal for self-study, interview preparation, and quick reference.
+Prepared by Yaswanth Sai Yarabati. Ideal for self-study, interview preparation, and quick reference.
 
 ---
 
