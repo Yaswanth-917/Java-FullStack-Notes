@@ -675,15 +675,190 @@ public class Temp {
 }
 ```
 ### Char Literals
+* We can specify char literal as single character within single quotes.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        char c = 'a';
+        char d = a;
+        /*
+        error: cannot find symbol
+        char d = a;
+                 ^
+  symbol:   variable a
+  location: class Temp
+        */
+        char e = "a";
+        /*
+        error: incompatible types: String cannot be converted to char
+        char e = "a";
+                 ^
+        */
+        char f = 'ab';
+        /*
+        error: unclosed character literal
+        char f = 'ab';
+                 ^
+        error: unclosed character literal
+        char f = 'ab';
+                    ^
+        error: not a statement
+        char f = 'ab';
+                   ^
+        */
+    }
+}
+```
+* We can specify char literal as integral literal which represents unicode value of the character and that integral literal can be specified either in decimal or octal or hexadecimal forms.
+* But, allowed range is 0 to 65535.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        char c = 97;
+        System.out.println(c);  //a
+        char d = 0XFace;
+        System.out.println(d);  //?
+        char e = 0777;
+        System.out.println(e);  //?
+        char f = 65535;
+        System.out.println(f);  //?
+        char g = 65536;
+        /*
+        error: incompatible types: possible lossy conversion from int to char
+        char g = 65536;
+                 ^
+        */
+    }
+}
+```
+* We can represent char literal in unicode representation which is nothing but '\uxxxx' where 'xxxx' is 4-digit hexadecimal number.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        char c = '\u0061';
+        System.out.println(c);  //a
+    }
+}
+```
+* Every escape character is a valid char literal.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        char c = '\n';
+        char d = '\t';
+        char e = '\m';
+        /*
+        error: illegal escape character
+        char e = '\m';
+                   ^
+        */
+    }
+}
+```
+|Escape Character|Description     |
+|----------------|----------------|
+|\n              |New line        |
+|\t              |Horizontal tab  |
+|\r              |Carriage return |
+|\b              |Back space      |
+|\f              |Form Feed       |
+|\'              |Single quote    |
+|\"              |Double quote    |
+|\\\             |Back slash      |
 
 
-
-
-
-
-
-
-
+1. Which of the following are valid?
+>>* char ch = 65536;   ❌
+>>* char ch = 0XBeer;   ❌
+>>* char ch = \uface;   ❌
+>>* char ch = '\ubeef';     ✔
+>>* char ch = '\m';     ❌
+>>* char ch = '\iface';     ❌
+### String Literal
+* Any sequence of characters within double quotes is treated as string literal.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        String s = "Rudra";
+    }
+}
+```
+### 1.7 Version Enhancements W.R.T Literals
+#### 1. Binary Literals
+* For integral data types, until 1.6 version we can specify literal value in the following ways (Decimal, Octal, Hexa Decimal Form).
+* But from 1.7 version onwards, we can specify literal value even in binary form also.
+* Allowed digits are 0 and 1.
+* Literal value should be prefixed with '0b' or '0B'.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x = 0b1111;
+        System.out.println(x);      //15
+    }
+}
+```
+#### 2. Usage of _ Symbol in Numeric Literals
+* From 1.7 version onwards, we can use '_' symbol between digits of numeric literal.
+* The main advantage of this approach is readability of the code will be improved.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        double d = 123456.789;      //123456.789
+        double e = 123_456.7_8_9;   //123456.789
+        System.out.println(d);
+        System.out.println(e);
+    }
+}
+```
+* At the time of compilation, these '_' will be removed automatically. Hence, after compilation the above lines will become "double d = 123456.789;".
+* We can use more than one '_' also between the digits.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        double d = 1__23_4_5__6.7_8_9;
+        double e = 1_2__3___4____5_____6.7_8_9;
+        System.out.println(d);      //123456.789
+        System.out.println(e);      //123456.789
+    }
+}
+```
+* We can use '_' symbol only between the digits. If we are using anywhere else, we will get compile time error.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        double d = _1_2_3456.7_8_9;
+        /*
+        error: ';' expected
+        double d = _1_2_3456.7_8_9;
+                            ^
+        */
+       double e = 1_23_456_.789;
+       /*
+       error: illegal underscore
+       double e = 1_23_456_.789;
+                          ^
+       */
+      double f = 1_23_456.7_8_9_;
+      /*
+      error: illegal underscore
+      double f = 1_23_456.7_8_9_;
+                               ^
+       */
+    }
+}
+```
+![alt text](image-3.png)
+* 8 byte long value, we can assign to 4 byte float variable. Because, both are following different memory representations internally.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        float f = 10l;
+        System.out.println(f);  //10.0
+    }
+}
+```
+* short data type can not be assigned to char. Because, short data can not hold maximum value of char.
+* char data type can not be assigned to short. Because, char data can not hold -ve sign.
 
 
 
