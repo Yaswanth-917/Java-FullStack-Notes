@@ -601,6 +601,86 @@ public class Temp {
     }
 }
 ```
+* We can specify the floating point literal even in exponential form (scientific notation).
+```java
+public class Temp {
+    public static void main(String[] args) {
+        double d = 1.2e3;
+        System.out.println(d);      //1200.0
+        float e = 1.2e3f;
+        System.out.println(e);      //1200.0
+        float f = 1.2e3;
+        /*
+        error: incompatible types: possible lossy conversion from double to float
+        float f = 1.2e3;
+                  ^
+        */
+    }
+}
+```
+### Boolean Literals
+* The only allowed values for boolean data type are true/false.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        boolean b = true;
+        boolean c = 0;
+        /*
+        error: incompatible types: int cannot be converted to boolean
+        boolean c = 0;
+                    ^
+        */
+        boolean d = True;
+        /*
+        error: cannot find symbol
+        boolean d = True;
+                    ^
+  symbol:   variable True
+  location: class Temp
+        */
+        boolean e = "true";
+        /*
+        error: incompatible types: String cannot be converted to boolean
+        boolean e = "true";
+                    ^
+        */
+    }
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x = 0;
+        int y = 1;
+        if (x) {
+            System.out.println("Hello");
+        }
+        else{
+            System.out.println("Hi");
+        }
+        /*
+        error: incompatible types: int cannot be converted to boolean
+        if (x) {
+            ^
+        */
+        while (y) {
+            System.out.println("Bye");
+        }
+        /*
+        error: incompatible types: int cannot be converted to boolean
+        while (y) {
+               ^
+        */
+    }
+}
+```
+### Char Literals
+
+
+
+
+
+
 
 
 
