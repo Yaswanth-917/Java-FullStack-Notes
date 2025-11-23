@@ -860,6 +860,224 @@ public class Temp {
 * short data type can not be assigned to char. Because, short data can not hold maximum value of char.
 * char data type can not be assigned to short. Because, char data can not hold -ve sign.
 
+# Arrays
+>1. Introduction
+>2. Array declaration
+>3. Array creation
+>4. Array initialization
+>5. Array declaration, creation, initialization in a single line
+>6. length vs length()
+>7. Anonymous arrays
+>8. Array element assignments
+>9. Array variable assignments
+## Introduction
+* An array is an indexed collection of fixed number of homogenous data elements.
+* The main advantage of array is we can represent huge number of values by using single variable. So that, readability of the code will be improved.
+* But, the main disadvantage of array is fixed in size i.e., once we creates an array, there is no chance of increasing or decreasing the size based on our requirement. Hence, to use array concept, compulsory we should know the size in advance, which may not possible always.
+## Array Declaration
+### 1-Dimensional Array Declaration
+```java
+int[] x;    //Recommended and valid
+int []x;    //valid
+int x[];    //valid
+```
+* *int[] x;* is recommended because the name is clearly separated from type.
+* At the time of declaration, we can not specify the size. Otherwise, we will get compile time error.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[6] x;       ❌
+        /*
+        error: ']' expected
+        int[6] x;
+            ^
+        error: not a statement
+        int[6] x;
+           ^
+        error: not a statement
+        int[6] x;
+               ^    
+        */
+        int[] y;        ✔
+    }
+}
+```
+### 2-Dimensional Array Declaration
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][] x;      //valid
+        int [][]y;      //valid
+        int z[][];      //valid
+        int[] []a;      //valid
+        int [] b[];     //valid
+        int []c[];      //valid
+    }       
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] a, b;     //a - 1D, b - 1D
+        int[] c[], d;   //a - 2D, b - 1D
+        int[] e[], f[]; //a - 2D, b - 2D
+        int[] []g, h;   //a - 2D, b - 2D
+        int[] []i,j[];  //a - 2D, b - 3D
+        int[] []k, []l; 
+        /*
+        error: <identifier> expected
+        int[] []k, []l;
+                  ^
+        error: ';' expected
+        int[] []k, []l;
+                     ^
+         */
+    }
+}
+```
+* If we want to specify dimension before the variable, that facility is applicable only for first variable in a declaration.
+* If we are trying to apply for remaining variables, we will get compile time error.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] []a, []b, []c;
+        /*
+        a - ✔
+        b - ❌
+        c - ❌
+        */
+    }
+}
+```
+### 3-Dimensional Array Declaration
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][][] a;    //valid
+        int [][][]b;    //valid
+        int c[][][];    //valid
+        int[] [][]d;    //valid
+        int[] e[][];    //valid
+        int[] []f[];    //valid
+        int[][] []g;    //valid
+        int[][] h[];    //valid
+        int [][]i[];    //valid
+        int []j[][];    //valid
+    }
+}
+```
+## Array Creation
+* Every array in java is an object only. Hence, we can create array by using new operator.
+**Ex:**
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] a = new int[3];
+    }
+}
+```
+>>>>>>>>>![alt text](image-4.png)
+* For every array type, corresponding classes are available and these classes are part of java language and not available to the programmer level.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] a = new int[3];
+        System.out.println(a.getClass().getName()); //[I
+    }
+}
+```
+|Array Type|Corresponding Class Name|
+|----------|------------------------|
+|int[]     |[I                      |
+|int[][]   |[[I                     |
+|double[]  |[D                      |
+|short[]   |[S                      |
+|byte[]    |[B                      |
+|boolean[] |[Z                      |
+1. At the time of array creation, compulsory we should specify the size. Otherwise, we will get compile time error.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] a = new int[3];
+        int[]b = new int[];
+        /*
+        error: array dimension missing
+        int[]b = new int[];
+                          ^
+        */
+    }
+}
+```
+2. It is legal to have an array with size 0 in java.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = new int[0];
+    }
+}
+```
+3. If we are trying to specify array size with some negative int value, then we will get runtime exception saying negative array size exception.
+**Ex:**
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = new int[-6];
+        /*
+        Exception in thread "main" java.lang.NegativeArraySizeException: -6
+        at Temp.main(Temp.java:3)
+        */
+    }
+}
+```
+4. To specify array size, the allowed data types are byte, short, char, int. If we are trying to specify any other type, then we wil get compile time error.
+**Ex:**
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] a = new int[10];
+        int[] b = new int['b'];
+        byte g = 20;
+        int[] c = new int[g];
+        short d = 30;
+        int[] e = new int[d];
+        int[] f = new int[10l];
+        /*
+        error: incompatible types: possible lossy conversion from long to int
+        int[] f = new int[10l];
+                          ^
+        */
+    }
+}
+```
+5. The maximum allowed array size in java is 21474843647 which is the maximum value of int data type.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] a = new int[2147483647];
+        int[] b = new int[2147483648];
+        /*
+        error: integer number too large
+        int[] b = new int[2147483648];
+                          ^
+        */
+    }
+}
+```
+6. Even in the first case, we may get runtime exception if sufficient heap memory not available.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
