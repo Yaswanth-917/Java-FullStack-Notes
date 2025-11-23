@@ -1454,8 +1454,131 @@ public class Temp {
 }
 ```
 Q. Which of the following promotions will be performed automatically?
-1. 
-
+1. char -> int             ✔
+2. char[] -> int[]         ❌
+3. int -> double           ✔
+4. int[] -> double[]       ❌
+5. float -> int            ❌
+6. float[] -> int[]        ❌
+7. String -> Object        ✔
+8. String[] -> Object[]    ✔
+* But, in the case of Object type array, child class type array can be promoted to parent class type array.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        String[] s = {"A","B","c"};
+        Object[] a = s;
+    }
+}
+```
+### Case 2
+* Whenever we are assigning one array to another array, internal elements won't be copied. Just reference variables will be reassigned.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] a = {0,20,30,40,50,60};
+        int[] b = {70,80};
+        a = b;
+        b = a;
+    }
+}
+```
+### Case 3
+* Whenever we are assigning one array to another array, the dimensions must be matched. For example, in the place of 1D int array, we should provide 1D array only. If we are trying to provide any other dimension, then we will get compile time error.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][] a = new int[3][];
+        a[0] = new int[4][3];
+        /*
+        error: incompatible types: int[][] cannot be converted to int[]
+        a[0] = new int[4][3];
+               ^
+        */
+       a[0] = 10;
+       /*
+       error: incompatible types: int cannot be converted to int[]
+       a[0] = 10;
+              ^
+       */
+      a[0] = new int[2];
+    }
+}
+```
+**Note:** Whenever we are assigning one array to another array, both dimensions and types must be matched. But, sizes are not required to match.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        for(int i = 0; i<=args.length;i++){
+            System.out.println(args[i]);
+            /*
+            java Temp a b c
+            a
+            b
+            c
+            Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+                    at Temp.main(Temp.java:4)
+            */
+            /*
+            java Temp a b 
+            a
+            b
+            Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+                    at Temp.main(Temp.java:4)
+            */
+            /*
+            java Temp
+            Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+                    at Temp.main(Temp.java:4)
+            */
+        }
+    }
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        String[] argh = {"x","y","z"};
+        args = argh;
+        for(String s:args){
+            System.out.println(s);
+        }
+            /*
+            java Temp a b c
+            x
+            y
+            z
+            */
+            /*
+            java Temp a b 
+            x
+            y
+            z
+            */
+            /*
+            java Temp
+            x
+            y
+            z
+            */
+    }
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][] a = new int[4][3];  //5 Objects created for this
+        a[0] = new int[4];          //1 Objects created for this
+        a[1] = new int[2];          //1 Objects created for this
+        a = new int[3][2];          //4 Objects created for this
+        /*
+        Total objects created: 11
+        Total objects eligible for garbage collector: 7
+        */
+    }
+}
+```
+![alt text](image-8.png)
 
 
 
