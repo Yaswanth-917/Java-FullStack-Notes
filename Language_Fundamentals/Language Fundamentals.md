@@ -1183,6 +1183,275 @@ public class Temp {
 }
 ```
 **Note:** If we are trying to access array element with out of range index (either positive value or negative int value) then we will get run time exception saying array index out of bounds exception.
+## Array Declaration, Creation & Initialization in Single Line
+* We can declare, create and initialize an array in a single line (shortcut representation).
+```java
+public class Temp {
+    public static void main(String[] args) {
+        /*
+        int[] x;
+        x = new int[3];
+        x[0]=10;
+        x[1]=20;
+        x[2]=30;
+        */
+        int[] x = { 10, 20, 30 };
+        char[] ch = { 'a', 'e', 'i', 'o', 'u' };
+        String[] s = { "A", "AA", "AAA" };
+    }
+}
+```
+* We can extend this shortcut for multi-dimensional arrays also.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][] x = {{10,20},{30,40,50}};
+    }
+}
+```
+>>>>>>>![alt text](image-6.png)
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][][] x = {{{12,20,30},{40,50,60}},{{70,80},{90,100,110}}};
+        System.out.println(x[0][1][2]);     //60
+        System.out.println(x[1][0][1]);     //80
+        System.out.println(x[2][0][0]);
+        /*
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+        */
+        System.out.println(x[1][2][0]);
+        /*
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+        */
+        System.out.println(x[1][1][1]);     //100
+        System.out.println(x[2][1][0]);
+        /*
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+        */
+    }
+}
+```
+![alt text](image-7.png)
+* If we want to use this shortcut, compulsory we should perform all activites in a single line. If we are trying to divide into multiple lines, then we will get compile time error.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = { 10, 20, 30 };
+        int[] y;
+        y={10,20,30};
+        /*
+        error: illegal start of expression
+        y={10,20,30};
+          ^
+        error: not a statement
+        y={10,20,30};
+           ^
+        error: ';' expected
+        y={10,20,30};
+             ^
+        */
+    }
+}
+```
+## length vs length()
+### length
+* length is a final variable applicable for arrays.
+* length variable represents the size of the array.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = new int[6];
+        System.out.println(x.length);   //6
+        System.out.println(x.length());
+        /*
+        error: cannot find symbol
+        System.out.println(x.length());
+                            ^
+  symbol:   method length()
+  location: variable x of type int[]
+        */
+    }
+}
+```
+### length()
+* length() is a final method applicable for string objects.
+* length() method returns number of characters present in the string.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        String s = "rudra";
+        System.out.println(s.length());     //5
+        System.out.println(s.length);
+        /*
+        error: cannot find symbol
+        System.out.println(s.length);
+                            ^
+  symbol:   variable length
+  location: variable s of type String
+        */
+    }
+}
+```
+**Note:** length variable applicable for array but not for string objects. Whereas length() applicable for string objects but not for arrays.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        String[] s = {"A","AA","AAA"};
+        System.out.println(s.length);       //3
+        System.out.println(s[0].length());  //1
+        System.out.println(s.length());
+        /*
+        error: cannot find symbol
+        System.out.println(s.length());
+                            ^
+  symbol:   method length()
+  location: variable s of type String[]
+        */
+        System.out.println(s[0].length);
+        /*
+        error: cannot find symbol
+        System.out.println(s[0].length);
+                               ^
+  symbol:   variable length
+  location: class String
+        */
+    }
+}
+```
+* In multi dimensional arrays, length variable represents only base size, but not total size.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][] x = new int[6][3];
+        System.out.println(x.length);       //6
+        System.out.println(x[0].length);    //3
+    }
+}
+```
+* There is no direct way to find total length of multi dimensional array. But, indirectly we can find as follows:
+```java
+x[0].length+x[1].length+x[2].length+....
+```
+## Anonymous Arrays
+* Sometimes we can declare an array without name. Such type of name less array is called anonymous array.
+* The main purpose of anonymous array is just for instant use (one time usage).
+* We can create anonymous array as follows
+```java
+new int[] {10,20,30,40};
+```
+* While creating anonymous array, we can not specify the size. Otherwise, we will get compile time error.
+```java
+new int[4] {10,20,30,40};   //❌
+new int[] {10,20,30,40};    //✔
+```
+* We can create multi-dimensional anonymous array also
+```java
+new[][] {{10,20},{30,40,50}};
+```
+* Based on our requirement, we can give the name for anonymous array, then it is no longer no anonymous.
+```java
+int[] x = new int[] {10,20,30};
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        Sum(new int[]{10,20,30,40});    //100
+    }
+    public static void Sum(int[] x) {
+        int total = 0;
+        for(int y:x){
+            total+=y;
+        }
+        System.out.println("The sum: "+total);
+    }
+}
+```
+* In the above example, just to call Sum method, we required an array, but after completing Sum method call, we are not using that array anymore. Hence, for this one time requirement anonymous array is the best choice.
+## Array Element Assignments
+### Case 1
+* In the case of primitive type arrays, as array elements we can provide any type which can be implicitly promoted to declared type.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = new int[5];
+        x[0] = 10;
+        x[1] = 'a';
+        byte b = 20;
+        x[2] = b;
+        short s = 30;
+        x[3] = s;
+        x[4] = 10l;
+        /*
+        error: incompatible types: possible lossy conversion from long to int
+        x[4] = 10l;
+               ^
+        */
+    }
+}
+```
+* In the case of float type arrays, the allowed data types are byte, short, char, int, long, float.
+### Case 2
+* In the case of object type array, as array elements we can provide either declared type objects or its child class objects.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        Object[] a = new Object[3];
+        a[0] = new Object();
+        a[1] = new String("rudra");
+        a[2] = new Integer(10);
+        Number[] n = new Number[3]; //Number is an abstract type
+        n[0] = new Integer(10);
+        n[1] = new Double(10.5);
+        n[2] = new String("rudra");
+        /*
+        error: incompatible types: String cannot be converted to Number
+        n[2] = new String("rudra");
+               ^
+        */
+    }
+}
+```
+### Case 3
+* For interface type array, as array elements its implementation class ojects are allowed.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        Runnable[] r = new Runnable[2];
+        r[0] = new Thread();
+        r[1] = new String("rudra");
+        /*
+        error: incompatible types: String cannot be converted to Runnable
+        r[1] = new String("rudra");
+               ^
+        */
+    }
+}
+```
+|Array Type|Allowed Element Type|
+|----------|--------------------|
+|Primitive Arrays|Any type which can be implicitly promoted to declared type|
+|Object Type Arrays|Either declared type or its child class objects|
+|Abstract Class Type Arrays|Its child class objects are allowed|
+|Interface Type Array|Its implementation class objects are allowed|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
