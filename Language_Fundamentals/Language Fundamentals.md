@@ -1064,3 +1064,148 @@ public class Temp {
 }
 ```
 6. Even in the first case, we may get runtime exception if sufficient heap memory not available.
+### 2-Dimensional Array Creation
+* In java, 2-D array not implemented by using matrix style. Sun people followed array of arrays approach for multi-dimensional array creation.
+* The main advantage of this approach is memory utilization will be improved.
+**Ex1: Memory Structure and Corresponding Java Code**
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][] x = new int[2][];
+        x[0] = new int[2];
+        x[1] = new int[3];
+    }
+}
+```
+**Ex2: To create 2D Array of various sizes**
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][][] x = new int[2][][];
+        x[0] = new int[3][];
+        x[0][0] = new int[1];
+        x[0][1] = new int[2];
+        x[0][2] = new int[3];
+        x[1] = new int[2][2];
+    }
+}
+```
+Q. Which of the following array declarations are valid?
+>* int[] a = new int[];            ❌    
+>* int[] a = new int[3];           ✔
+>* int[][] a = new int[][];        ❌
+>* int[][] a = new int[3][];       ✔
+>* int[][] a = new int[][4];       ❌
+>* int[][] a = new int[3][4];      ✔
+>* int[][][] a = new int[3][4][5]; ✔
+>* int[][][] a = new int[3][4][];  ✔
+>* int[][][] a = new int[3][][5];  ❌
+>* int[][][] a = new int[][4][5];  ❌
+### Array Initialization
+* Once we creates an array, every element by default initialized with default values.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = new int[3];
+        System.out.println(x);      //[I@251a69d7
+        System.out.println(x[0]);   //0
+    }
+}
+```
+**Note:** Whenever we are trying to print any reference variable, internally 2 string method will be called which is implemented by default to return the string in following form "classname@hashcode_in_hexadecimal_form".
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][] x = new int[2][3];
+        System.out.println(x);      //[[I@251a69d7
+        System.out.println(x[0]);   //[I@7344699f
+        System.out.println(x[0][0]);//0
+    }
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[][] x = new int[2][];
+        System.out.println(x);      //[[I@251a69d7
+        System.out.println(x[0]);   //null
+        System.out.println(x[0][0]);
+        /*
+        Exception in thread "main" java.lang.NullPointerException: Cannot load from int array because "<local1>[0]" is null       
+        at Temp.main(Temp.java:6)
+        */
+    }
+}
+```
+**Note:** If we are trying to perform any operation on null, then we will get runtime exception saying null pointer exception.
+* Once we creates an array, every array element by default initialized with default values. If we are not satisfied by default values then we can overwrite these values with our customized values.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = new int[6];
+        x[0] = 10;
+        x[1] = 20;
+        x[2] = 30;
+        x[3] = 40;
+        x[4] = 50;
+        x[5] = 60;
+    }
+}
+```
+>>>>![alt text](image-5.png)
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = new int[6];
+        x[0] = 10;
+        x[1] = 20;
+        x[2] = 30;
+        x[3] = 40;
+        x[4] = 50;
+        x[5] = 60;
+        x[6] = 70;
+        /*
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 6
+        at Temp.main(Temp.java:10)
+        */
+       x[-6] = 80;
+       /*
+       Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index -6 out of bounds for length 6
+        at Temp.main(Temp.java:15)
+        */
+       x[2.5] = 90;
+       /*
+       error: incompatible types: possible lossy conversion from double to int
+       x[2.5] = 90;
+         ^
+       */
+    }
+}
+```
+**Note:** If we are trying to access array element with out of range index (either positive value or negative int value) then we will get run time exception saying array index out of bounds exception.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
