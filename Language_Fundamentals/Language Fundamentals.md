@@ -1434,6 +1434,28 @@ public class Temp {
 |Object Type Arrays|Either declared type or its child class objects|
 |Abstract Class Type Arrays|Its child class objects are allowed|
 |Interface Type Array|Its implementation class objects are allowed|
+## Array Variable Assignment
+### Case 1
+* Element level promotions are not applicable at array level.
+For example, char element can be promoted to int type, whereas char[] can not be promoted to int[].
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = {10,20,30,40};
+        char [] ch = {'a','b','c','d'};
+        int[] b = x;
+        int[] c = ch;
+        /*
+        incompatible types: char[] cannot be converted to int[]
+        int[] c = ch;
+                  ^
+        */
+    }
+}
+```
+Q. Which of the following promotions will be performed automatically?
+1. 
+
 
 
 
