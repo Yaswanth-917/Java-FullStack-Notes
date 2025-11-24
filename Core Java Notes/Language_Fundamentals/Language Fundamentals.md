@@ -1704,7 +1704,75 @@ class Temp{
 }
 ```
 >>>>>![alt text](image-9.png)
-
+### Local Variables
+* Sometimes to meet temporary requirements of the programmer, we can declare variables inside a method or block or constructor. Such type of variables are called local variables or temporary variables or stack variables or automatic variables.
+* Local variables will be stored inside the stack memory.
+* Local variables will be created while executing the block in which we declared it. Once, block execution completes automatically local variable will be destroyed. Hence, the scope of local variable is the block in which we declared it.
+```java
+class Temp{
+    public static void main(String[] args) {
+        int i = 0;
+        for(int j = 0; j<3; j++){
+            i = i +j;
+        }
+        System.out.println(i+"..."+j);
+        /*
+        System.out.println(i+"..."+j);
+                                   ^
+  symbol:   variable j
+  location: class Temp
+        */
+    }
+}
+```
+```java
+class Temp{
+    public static void main(String[] args) {
+       try {
+        int j = Integer.parseInt("ten");
+       } catch (NumberFormatException e) {
+        j = 10;
+        /*
+        error: cannot find symbol
+        j = 10;
+        ^
+  symbol:   variable j
+  location: class Temp
+        */
+       }
+       System.out.println(j);
+       /*
+       error: cannot find symbol
+       System.out.println(j);
+                          ^
+  symbol:   variable j
+  location: class Temp
+       */
+    }
+}
+```
+* For local variables, JVM won't provide default values. Compulsory we should perform initialization explicitly. Before using that variable i.e., if we are not using then it is not required to perform initialization.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x;
+        System.out.println("Hello");    //Hello
+    }
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x;
+        System.out.println(x);
+        /*
+        error: variable x might not have been initialized
+        System.out.println(x);
+                           ^
+        */
+    }
+}
+```
 
 
 
