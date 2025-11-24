@@ -1636,6 +1636,75 @@ public class Temp {
 ```
 * Instance variables also known as object level variables or attributes.
 ### Static Variables
+* If the value of a variable is not varied from object to object, then it is not recommended to declare the variable as instance variable.
+* We have to declare such type variables at class level by using static modifier.
+* In the case of instance variables, for every object, a separate copy will be created but in the case of static variables, a single copy will be created at class level and shared by every object of the class.
+* Static variables should be declared within the class directly, but outside of any method or block or constructor.
+* Static variables will be created at the time of class loading and destroyed at the time of class unloading. Hence, scope of static variable is exactly same as scope of .class file.
+#### Execution of .class file (java Temp)
+1. Start JVM
+2. Create & Start main thread
+3. Locate Temp.class
+4. Load Temp class (Static variables will be created)
+5. Execute main() method
+6. Unload Temp.class (Static variables will be destructed)
+7. Terminate main thread
+8. Shutdown JVM
+* Static variables will be stored in method area.
+* We can access static variables either by object reference or by class name. But, recommended to use class name.
+* Within the same class, it is not required to use class name and we can access directly.
+```java
+class Temp{
+    static int x = 10;
+    public static void main(String[] args) {
+        Temp t = new Temp();
+        System.out.println(t.x);    //10
+        System.out.println(Temp.x); //10
+        System.out.println(x);      //10
+    }
+}
+```
+* We can access static variables directly from both instance and static areas.
+```java
+class Temp{
+    static int x = 10;
+    public static void main(String[] args) {
+        System.out.println(x);      //10
+    }
+    public void m1(){
+        System.out.println(x);
+    }
+}
+```
+* For static variables, JVM will provide default values and we are not required to perform initialization explicitly.
+```java
+class Temp{
+    static int x;
+    static double d;
+    static String s;
+    public static void main(String[] args) {
+        System.out.println(x);  //0
+        System.out.println(d);  //0.0
+        System.out.println(s);  //null
+    }
+}
+```
+* Static variables also known as class level variables or fields.
+```java
+class Temp{
+    static int x = 10;
+    int y = 20;
+    public static void main(String[] args) {
+        Temp t = new Temp();
+        t.x = 888;
+        t.y = 999;
+        Temp e = new Temp();
+        System.out.println(t.x+"..."+e.y);  //888...20
+    }
+}
+```
+>>>>>![alt text](image-9.png)
+
 
 
 
