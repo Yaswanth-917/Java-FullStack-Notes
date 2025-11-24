@@ -1580,10 +1580,62 @@ public class Temp {
 ```
 ![alt text](image-8.png)
 
-
-
-
-
+# Types of Variables
+## Division 1
+* Based on type of value represented by a variable, all variables are divided into 2 types:
+>>1. Primitive variables can be used to represent primitive values.
+>>>>>int x = 10;
+>>2. Reference variables can be used to refer objects.
+>>>>>Student s = new Student();
+## Division 2
+* Based on position of declaration and behavior, all variables are divided into 3 types:
+>>1. Instance variables
+>>2. Static variables
+>>3. Local Variables
+### Instance Variables
+* If the value of a variable is varied from object to object, such type of variables are called instance variables.
+* For every object, a separate copy of instance variables will be created.
+* Instance variables should be declare withn the class directly but outside of any method or block or constructor.
+* Instance variable will be created at the time of object creation and destroyed at the time of object destruction. Hence, the scope of instance variable is exactly same as scope of object.
+* Instance variables will be stored in the heap memory as the part of the object.
+* We can not access instance variables directly from static area. But, we can access by using object reference.
+* But, we can access instance variables directly from instance area.
+```java
+public class Temp {
+    int x = 10;
+    public static void main(String[] args) {
+        System.out.println(x);
+        /*
+        error: non-static variable x cannot be referenced from a static context
+        System.out.println(x);
+                           ^
+        */
+        Temp t = new Temp();
+        System.out.println(t.x);    //10
+    }
+    public void m1(){
+        System.out.println(x);      //10
+    }
+}
+```
+* For instance variables, JVM will always provide default values and we are not required to perform initialization explicitly.
+```java
+public class Temp {
+    int x;
+    double d;
+    boolean b;
+    String s;
+    public static void main(String[] args) {
+        Temp t = new Temp();
+        System.out.println(t.x);    //0
+        System.out.println(t.d);    //0.0
+        System.out.println(t.b);    //false
+        System.out.println(t.s);    //null
+    }
+}
+```
+* Instance variables also known as object level variables or attributes.
+### Static Variables
 
 
 
