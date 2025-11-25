@@ -309,7 +309,7 @@ public class Temp {
 **Note:**
 * All the above data types(byte, short, int, long) meant for representing integral values.
 * If we want to represent floating point values, then we should go for floating point data types.
-## Floating Point Data Types
+### Floating Point Data Types
 |                   |**float**         |**double**          |
 |-------------------|:-----------------|--------------------|
 |Accuracy           |5 to 6            |14 to 15            |
@@ -380,7 +380,7 @@ public class Temp {
 * Hence, the size of char is 2 bytes.
 * size: 2 bytes
 * Range: 0 to 65535
-### Summary of Java Primitive Data Types
+## Summary of Java Primitive Data Types
 |Data Type|Size   |Range                                                                  |Wrapper Class|Default Value|
 |---------|-------|-----------------------------------------------------------------------|-------------|-------------|
 |byte     |1 byte |-2<sup>7</sup> to 2<sup>7</sup>-1 (128 to 127)                         |Byte         |0            |
@@ -405,7 +405,7 @@ public class Temp {
     }
 }
 ```
-## Literals
+# Literals
 * A constant value which can be assigned to the variable is called literal.  
 **Ex:**  
 >>>>int x = 10;
@@ -414,7 +414,7 @@ public class Temp {
 >>x - name of variable/identifier  
 >>10 - constant value/literal
 
-### Integral Literals
+## Integral Literals
 * For integral data types (byte, short, int, long), we can specify literal value in the following ways.
 1. Decimal Literals (Base - 10)
 >* Allowed digits are 0 to 9.  
@@ -510,7 +510,7 @@ public class Temp {
     }
 }
 ```
-### Floating Point Literals
+## Floating Point Literals
 * By default, every floating point literal is of double type.
 * Hence, we can not assign directly to the float variable.
 * But, we can specify floating point literal as float type by suffixed with 'f' or 'F'.
@@ -618,7 +618,7 @@ public class Temp {
     }
 }
 ```
-### Boolean Literals
+## Boolean Literals
 * The only allowed values for boolean data type are true/false.
 ```java
 public class Temp {
@@ -674,7 +674,7 @@ public class Temp {
     }
 }
 ```
-### Char Literals
+## Char Literals
 * We can specify char literal as single character within single quotes.
 ```java
 public class Temp {
@@ -774,7 +774,7 @@ public class Temp {
 >>* char ch = '\ubeef';     ✔
 >>* char ch = '\m';     ❌
 >>* char ch = '\iface';     ❌
-### String Literal
+## String Literal
 * Any sequence of characters within double quotes is treated as string literal.
 ```java
 public class Temp {
@@ -783,8 +783,8 @@ public class Temp {
     }
 }
 ```
-### 1.7 Version Enhancements W.R.T Literals
-#### 1. Binary Literals
+## 1.7 Version Enhancements W.R.T Literals
+### 1. Binary Literals
 * For integral data types, until 1.6 version we can specify literal value in the following ways (Decimal, Octal, Hexa Decimal Form).
 * But from 1.7 version onwards, we can specify literal value even in binary form also.
 * Allowed digits are 0 and 1.
@@ -797,7 +797,7 @@ public class Temp {
     }
 }
 ```
-#### 2. Usage of _ Symbol in Numeric Literals
+### 2. Usage of _ Symbol in Numeric Literals
 * From 1.7 version onwards, we can use '_' symbol between digits of numeric literal.
 * The main advantage of this approach is readability of the code will be improved.
 ```java
@@ -1101,7 +1101,7 @@ Q. Which of the following array declarations are valid?
 >* int[][][] a = new int[3][4][];  ✔
 >* int[][][] a = new int[3][][5];  ❌
 >* int[][][] a = new int[][4][5];  ❌
-### Array Initialization
+## Array Initialization
 * Once we creates an array, every element by default initialized with default values.
 ```java
 public class Temp {
@@ -1434,7 +1434,7 @@ public class Temp {
 |Object Type Arrays|Either declared type or its child class objects|
 |Abstract Class Type Arrays|Its child class objects are allowed|
 |Interface Type Array|Its implementation class objects are allowed|
-## Array Variable Assignment
+## Array Variable Assignments
 ### Case 1
 * Element level promotions are not applicable at array level.
 For example, char element can be promoted to int type, whereas char[] can not be promoted to int[].
@@ -1773,14 +1773,184 @@ public class Temp {
     }
 }
 ```
-
 ```java
+public class Temp {
+    public static void main(String[] args) {
+        int x;
+        if (args.length>0) {
+            x = 10;
+        }
+        System.out.println(x);
+        /*
+        error: variable x might not have been initialized
+        System.out.println(x);
+                           ^
+        */
+    }
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int x;
+        if (args.length>0) {
+            x = 10;
+        }
+        else {
+            x = 20;
+        }
+        System.out.println(x);
+        /*
+        java Temp A B
+        10
+        java Temp    
+        20
+        */
+    }
+}
+```
+**Note:**
+* It is not recommended to perform initialization for local variables inside logical blocks. Because, there is no guarantee for the execution of these blocks always at the run time.
+* It is highly recommended to perform initialization for local variables at the time of declaration atleast with default values.
+* The only applicable modifier for local variables is final. By mistake, if we are trying to apply any other modifier then we will get compile time error.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        public int x = 10;
+        /*
+        error: illegal start of expression
+        public int x = 10;
+        ^
+        */
+        private int y = 10;
+        /*
+        error: illegal start of expression
+        private int y = 10;
+        ^
+        */
+        protected int z = 10;
+        /*
+        error: illegal start of expression
+        protected int z = 10;
+        ^
+        */
+        static int a = 10;
+        /*
+        error: illegal start of expression
+        static int a = 10;
+        ^
+        */
+        transient int b = 10;
+        /*
+        error: illegal start of expression
+        transient int b = 10;
+        ^
+        */
+        volatile int c = 10;
+        /*
+        error: illegal start of expression
+        volatile int b = 10;
+        ^
+        */
+        final int d = 10;
+    }
+}
+```
+* If we are not declaring with any modifier then by default it is default. But, this rule is applicable only for instance and static variables, but not for local variables.
 
+**Conclusions:**
+* For instance and static variables, JVM will provide default values and we are not required to perform initialization explicitly. But for local variables, JVM won't provide default values. Compulsory, we should perform initialization expliciltly before using that variable.
+* Instance and static variables can be accessed by multiple threads simultaneously. Hence, these are not thread safe. But, in the case of local variables, for every thread a separate copy will be created and hence, local variables are thread safe.
 
-
-
-
-
+|Types of variables|Thread Safe|
+|------------------|-----------|
+|Instance Variable |NO         |
+|Static Variable   |NO         |
+|Local Variable    |YES        |
+* Every variable in java should be either instance or static or local.
+* Every variable in java should be either primitvie or reference. Hence, various possible combinations of variables in java are 
+![alt text](image-10.png)
+```java
+public class Temp {
+    int x = 10;                 //Instance - Primitive
+    static String s = "rudra";  //Static - Reference
+    public static void main(String[] args) {
+        int[] y = new int[3];   //Local - Reference
+    }
+}
+```
+## Uninitialized Arrays
+### Instance Level
+```java
+public class Temp {
+    int[] x;
+    public static void main(String[] args) {
+        Temp t = new Temp();
+        System.out.println(t.x);    //null
+        System.out.println(t.x[0]);
+        /*
+        Exception in thread "main" java.lang.NullPointerException: Cannot load from int array because "<local1>.x" is null
+        */
+    }
+}
+```
+```java
+public class Temp {
+    int[] x = new int[3];
+    public static void main(String[] args) {
+        Temp t = new Temp();
+        System.out.println(t.x);        //[I@251a69d7
+        System.out.println(t.x[0]);     //0
+    }
+}
+```
+### Static Level
+```java
+public class Temp {
+    static int[] x;
+    public static void main(String[] args) {
+        System.out.println(x);    //null
+        System.out.println(x[0]);
+        /*
+        Exception in thread "main" java.lang.NullPointerException: Cannot load from int array because "<local1>.x" is null
+        */
+    }
+}
+```
+```java
+public class Temp {
+    static int[] x = new int[3];
+    public static void main(String[] args) {
+        System.out.println(x);        //[I@251a69d7
+        System.out.println(x[0]);     //0
+    }
+}
+```
+### Local Level
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x;
+        System.out.println(x);
+        /*
+        error: variable x might not have been initialized
+        System.out.println(x);
+                           ^
+        */
+        System.out.println(x[0]);
+    }
+}
+```
+```java
+public class Temp {
+    public static void main(String[] args) {
+        int[] x = new int[3];
+        System.out.println(x);      //[I@251a69d7
+        System.out.println(x[0]);   //0
+    }
+}
+```
+* Once, we creates an array, every array element by default initialized with default values irrespective of whether it is instance or static or local array.
 
 
 
