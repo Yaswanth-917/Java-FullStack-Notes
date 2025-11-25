@@ -1951,6 +1951,51 @@ public class Temp {
 }
 ```
 * Once, we creates an array, every array element by default initialized with default values irrespective of whether it is instance or static or local array.
+# var-arg Methods (Variable number of Argument Methods)
+* Until 1.4 version, we can not declare a method with variable number of arguments. If there is a change in number of arguments, compulsory we should go for new method. It increases length of the code and reduces the readability.
+* To overcome this problem, SUN people introduced var-arg methods in 1.5 version. According to this, we can declare a method which can take variable number of arguments. Such type of methods are called var-arg methods.
+* We can declare var-arg method as follows m1(int... x). We can call this method by passing any number of int values including 0 number.
+```java
+public class Temp {
+    public static void sum(int... numbers) {
+        int total = 0;
+        for (int num : numbers) {
+            total += num;
+        }   
+        System.out.println(total);
+    }
+    public static void main(String[] args) {
+        sum(10, 20, 30);  // 60
+        sum(5, 15);       // 20
+        sum();             // 0
+    }
+}
+```
+```java
+public class Temp {
+    public static void m1(int... x){
+        System.out.println("var-arg Methods");
+    }
+    public static void main(String[] args) {
+        m1();           //var-arg Methods
+        m1(10);         //var-arg Methods
+        m1(10,20,30);   //var-arg Methods
+    }
+}
+```
+* Internally, var-arg parameter will be converted into 1D array. Hence, within the var-arg method we can differentiate values by using index.
+## Case 1
+Which of the following are valid var-arg method declarations?
+1. m1(int... x)     ✔
+2. m1(int ...x)     ✔
+3. m1(int...x)      ✔
+4. m1(int x...)     ❌
+5. m1(int. ..x)     ❌
+6. m1(int .x..)     ❌
+
+
+
+
 
 
 
