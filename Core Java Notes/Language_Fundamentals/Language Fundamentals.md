@@ -2069,15 +2069,107 @@ public class Temp {
     }
 }
 ```
+# main Method
+* Whether class contains main() or not, and whether main method is declared according to requirement or not, these things won't be checked by compiler.
+* At run time, JVM is responsible to check these things. If JVM unable to find main(), then we will get run time exception saying "No such method error: main".
+```java
+public class Temp {
+    /*
+    Error: Main method not found in class Temp, please define the main method as:
+    public static void main(String[] args)
+    or a JavaFX application class must extend javafx.application.Application
+    */
+}
+```
+* At run time, JVM always searches for the main() with the following prototype.
+>>>public static void main(String[] args)
+>* public - To call by JVM from anywhere
+>* static - Without existing Object also JVM has to call this method
+>* void - main() method won't return anything to JVM
+>* main - This is the name which is configured inside JVM
+>* String[] args - Command-line arguments
+* The above syntax is very strict and if we perform any change then we will get run time exception saying "no such method error: main".
+* Even though above syntax is very strict, the following changes are acceptable.
+>1. Instead of public static, we can take static public i.e., the order of modifiers is not important.
+>2. We can declare String[] in any acceptable form.
+>>* main(String[] args)
+>>* main(String []args)
+>>* main(String args[])
+>3. Instead of args, we can take any valid java identifier.
+>>* main(String[] rudra)
+* We can replace String[] with var-arg parameter.
+>>* main(String... args)
+* We can declare main() with the following modifiers:
+>>* final
+>>* synchronized
+>>* strictfp
+```java
+public class Temp {
+    static final synchronized public void main(String[] args) {
+        System.out.println("Valid Main Method");    //Valid Main Method
+    }
+}
+```
+Which of the following main() declarations are valid?
+>1. public static void main(String args)  ❌
+>2. public static void Main(String[] args)  ❌
+>3. public void main(String[] args)     ❌
+>4. public static int main(String[] args)   ❌
+>5. final synchronized strictfp public void main(String[] args) ❌
+>6. final synchronized strictfp public static void main(String[] args)  ✔
+>7. public static void main(String... args) ✔
+* We won't get compile time error anywhere, but except last 2 cases, in remaining we will get run time exception saying "no such method error: main".
+## Case 1
+* Overloading of the main() is possible, but JVM will always call String[] argument main() only. The other overloaded method we have call explicitly like normal method call.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        System.out.println("String[]");     //String[]
+    }
+    public static void main(int[] args) {
+        System.out.println("int[]");
+    }
+}
+```
+## Case 2
+* Inheritance concept applicable for main(). Hence, while executing child class, if child does not contain main(), then parent class main() will be executed.
+```java
+public class Parent{
+    public static void main(String[] args) {
+        System.out.println("Parent main");
+    }
+}
+class Child extends Parent{
+}
+/*
+java Parent
+Parent main
+java Child
+Parent main
+*/
+```
+## Case 3
+```java
+public class Parent{
+    public static void main(String[] args) {
+        System.out.println("Parent main");
+    }
+}
+class Child extends Parent{
+    public static void main(String[] args) {
+        System.out.println("Child main");
+    }
+}       //It is method hiding but not overriding.
+/*
+java Parent
+Parent main
+java Child
+Child main
+*/
+```
+* It seems overriding concept applicable for main(), but it is not overriding and it is method hiding.
 
-
-
-
-
-
-
-
-
+**Note:** For main(), inheritance and overloading concepts are applicable. But, overriding concept is not applicable. Instead of overriding, method hiding is applicable.
 
 
 
