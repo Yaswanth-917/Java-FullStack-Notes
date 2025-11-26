@@ -2170,7 +2170,82 @@ Child main
 * It seems overriding concept applicable for main(), but it is not overriding and it is method hiding.
 
 **Note:** For main(), inheritance and overloading concepts are applicable. But, overriding concept is not applicable. Instead of overriding, method hiding is applicable.
-
+## 1.7 Version Enhancements W.R.T main()
+* Until 1.6 version, if the class does not contain main() then we will get runtime exception saying "No such method error: main".
+* But from 1.7 version, instead of no such method error, we will get more elaborated error information.
+```java
+public class Temp {
+    /*
+    1.6 version
+    Exception in thread "main" java.lang.NoSuchMethodError: main
+    */
+    /*
+    1.7 version
+    Error: Main method not found in class Temp, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+    */
+}
+```
+* From 1.7 version onwards, main() method is mandatory to start program execution. Hence, even though class contains static block, it won't be executed if the class does not contain main().
+```java
+public class Temp {
+    static{
+        System.out.println("Static Block");
+    }
+    /*
+    1.6 version
+    Static Block
+    Exception in thread "main" java.lang.NoSuchMethodError: main
+    */
+    /*
+    1.7 version
+    Error: Main method not found in class Temp, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+    */
+}
+```
+```java
+public class Temp {
+    static{
+        System.out.println("Static Block");
+        System.exit(0);
+    }
+    /*
+    1.6 version
+    Static Block
+    */
+    /*
+    1.7 version
+    Error: Main method not found in class Temp, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+    */
+}
+```
+```java
+public class Temp {
+    static{
+        System.out.println("Static Block");
+    }
+    public static void main(String[] args) {
+        System.out.println("Main Method");
+    }
+    /*
+    1.6 version
+    Static Block
+    Main Method
+    */
+   /*1.7 version
+    Static Block
+    Main Method
+    */
+}
+```
+![alt text](image-11.png)
+* Without writing main(), it is possible to print statements to the console using static block. But, this rule is applicable until 1.6 version.
+* From 1.7 version, it is impossible to print statements to the console without writing main() method.
 
 
 
