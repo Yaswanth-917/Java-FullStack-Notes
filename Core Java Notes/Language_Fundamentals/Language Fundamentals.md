@@ -2049,7 +2049,7 @@ public class Temp {
 **Note:**
 * m1(int... x) -> we can call this method by passing a group of int values and x will become 1D array.
 >>>m1(int... x) == int[] x
-* m1(int[]... x) -> we can call this method by passing a group of 1D int arrays and x will become 2D int array
+* m1(int[]... x) -> we can call this method by passing a group of 1D int arrays and x will become 2D int array.
 >>>m1(int[]... x) == int[][] x
 ```java
 public class Temp {
@@ -2246,7 +2246,102 @@ public class Temp {
 ![alt text](image-11.png)
 * Without writing main(), it is possible to print statements to the console using static block. But, this rule is applicable until 1.6 version.
 * From 1.7 version, it is impossible to print statements to the console without writing main() method.
-
+# Command Line Arguments
+* The arguments which are passing from command prompt are called command line arguments.
+* With these command line arguments, JVM will create an array and by passing that array as argument, JVM will call main().
+>>>java Test A B C
+>* A - args[0]
+>* B - args[1]
+>* C - args[2]
+>* args.length = 3
+* The main objective of command line arguments is we can customize behavior of the main().
+## Case 1
+```java
+public class Temp {
+    public static void main(String[] args) {
+        for(int i = 0; i<= args.length;i++){
+            System.out.println(args[i]);
+        }
+        /*
+        java Temp A B C
+        A
+        B
+        C
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+                at Temp.main(Temp.java:4)
+        */
+       /*
+        java Temp A B
+        A
+        B
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+                at Temp.main(Temp.java:4)
+        */
+       /*
+        java Temp
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+                at Temp.main(Temp.java:4)
+        */
+    }
+}
+```
+* If we replace "<=" with "<", the we won't get any run time exception.
+## Case 2
+```java
+public class Temp {
+    public static void main(String[] args) {
+        String[] argh = {"X","Y","Z"};
+        args = argh;
+        for (String s:args) {
+            System.out.println(s);
+        }
+        /*
+        java Temp A B C
+        X
+        Y
+        Z
+        */
+        /*
+        java Temp A B
+        X
+        Y
+        Z
+        */
+        /*
+        java Temp
+        X
+        Y
+        Z
+        */
+    }
+}
+```
+## Case 3
+* Within main(), command line arguments are available in String form.
+```java
+public class Temp {
+    public static void main(String[] args) {
+        System.out.println(args[0]+args[1]);
+        /*
+        java Temp 10 20
+        1020
+        */
+    }
+}
+```
+## Case 4
+* Usually space( ) itself is the separator between command line arguments. If our command line argument itself contains space, then we have to enclose that command line argument within double quotes ("").
+```java
+public class Temp {
+    public static void main(String[] args) {
+        System.out.println(args[0]);
+        /*
+        java Temp "Note Book"
+        Note Book
+        */
+    }
+}
+```
 
 
 
