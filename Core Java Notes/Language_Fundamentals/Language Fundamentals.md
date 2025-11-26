@@ -1992,11 +1992,83 @@ Which of the following are valid var-arg method declarations?
 4. m1(int x...)     ❌
 5. m1(int. ..x)     ❌
 6. m1(int .x..)     ❌
+## Case 2
+* We can mix var-arg parameter with normal parameter.
+>>>m1(int x, int...y)
+>>>m1(String x, double... y)
+## Case 3
+* If we mix normal parameter with var-arg parameter, then var-arg parameter should be last parameter.
+>>>m1(double... d, String s)    ❌
+>>>m1(char ch, String s)        ✔
+## Case 4
+* Inside var-arg method, we can take only 1 var-arg parameter and we can not take more than 1 var-arg parameter.
+>>>m1(int... x, double... d) ❌
+## Case 5
+* Inside a class, we can not declare var-arg method and corresponding 1D arra method simultaneously. Otherwise we will get compile time error.
+```java
+public class Temp {
+    public static void m1(int... x) {
+        System.out.println("int...");        
+    }
+    public static void m1(int[] x) {
+        System.out.println("int[]");
+    }
+    /*
+    error: cannot declare both m1(int[]) and m1(int...) in Temp
+    public static void m1(int[] x) {
+                       ^
+    */
+}
+```
+## Case 6
+```java
+public class Temp {
+    public static void m1(int... x) {
+        System.out.println("var-arg Method");        
+    }
+    public static void m1(int x) {
+        System.out.println("General Method");
+    }
+    public static void main(String[] args) {
+        m1();               //var-arg Method
+        m1(10,20);    //var-arg Method
+        m1(10);          //General Method
+    }
+}
+```
+* In general, var-arg method will get least priority i.e., if no other method matched then only var-arg method will get the chance. It is exactly same as default case inside switch.
+## Equivalence Between var-arg Parameter and 1D Array
+### Case 1
+* Wherever 1D array present, we can replace with var-arg parameter.
+>>>m1(int[] x) == m1(int...x)
+>>>main(String[] args) == main(String... args)
+### Case 2
+* Wherever var-arg parameter present, we can not replace with 1D array.
+>>>m1(int... x) != m1(int[] x)
 
-
-
-
-
+**Note:**
+* m1(int... x) -> we can call this method by passing a group of int values and x will become 1D array.
+>>>m1(int... x) == int[] x
+* m1(int[]... x) -> we can call this method by passing a group of 1D int arrays and x will become 2D int array
+>>>m1(int[]... x) == int[][] x
+```java
+public class Temp {
+    public static void m1(int[]... x){
+        for(int[] y:x){
+            System.out.println(y[0]);
+        }
+    }
+    public static void main(String[] args) {
+        int[] a = {10,20,30};
+        int[] b = {40,50,60};
+        m1(a,b);
+        /*
+        10
+        40
+        */
+    }
+}
+```
 
 
 
