@@ -2343,23 +2343,80 @@ public class Temp {
 }
 ```
 
+# Java Coding Standards
+* Whenever we are writing java code, it is highly recommended to follow coding standards. Whenever we are writing any component, it's name should reflect the purpose of that component (functionality).
+* The main advantage of this approach is readability and maintainability of the code will be improved.
+```java
+class A{
+    public int m1(int x, int y){
+        return x+y;
+    }
+}
+```
+```java
+package com.rudra.CalculatorApp;
 
+public class CalculatorApp {
+    public static int add(int number1, int number2) {
+        return number1 + number2;
+    }
+}
+```
+## Coding Standards For Classes
+* Usually, class names are nouns. They should start with upper case character and if it contains multiple words, every inner word should starts with upper case character.
+>>**Ex:** String, StringBuffer, etc.
+## Coding Standards For Interfaces
+* Usually, interface names are adjectives. They should start with upper case character and if it contains multiple words, every inner word should starts with upper case character.
+>>**Ex:** Runnable, Serializable, Comparable, etc.
+## Coding Standards For Methods
+* Usually, method names are either verbs or verb-noun combination. They should start with lower case alphabet symbol and if it contains multiple words, then every inner word should starts with upper case character (camel case convention).
+>>**Ex:** print(), run(), sleep(), getName(), setSalary(), etc.
+## Coding Standards For Variables
+* Usually, variable names are nouns. They should start with lower case alphabet symbol and if it contains multiple words, then every inner word should starts with upper case character (camel case convention).
+>>**Ex:** name, age, salary, mobileNumber, etc.
+## Coding Standards For Constants
+* Usually, constant names are nouns. They should contain only upper case characters and if it contains multiple words, then these words are separated with "_".
+>>**Ex:** MAX_VALUE, MAX_PRIORITY, MIN_PRIORITY, PI.
 
+**Note:** Usually, we can declare constants with public, static and final modifiers.
+## JavaBean Coding Standards
+* A javabean is a simple java class with private properties and public getter and setter methods.
+```java
+public class StudentBean {
+    //class name ends with 'Bean" is not official convention from SUN.
+    private String name;
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+}
+```
+### Syntax For Setter Method
+* It should be public method. The return type should be void. Method name should be prefixed with set. It should take some argument i.e., it should not be no argument method.
+### Syntax For Getter Method
+* It should be public method. The return type should not be void. Method name should be prefixed with get. It should not take any argument.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Note:** For boolean properties, getter method name can be prefixed with either get or is. But recommended to use is.
+```java
+private boolean empty;
+public boolean getEmpty(){
+    return empty;
+}
+public boolean isEmpty(){   //recommended
+    return empty;
+}
+```
+### Coding Standards For Listeners
+#### Case 1 (To Register A Listener)
+* Method name should be prefixed with add.
+>>* public void addMyActionListener(MyActionListener l) ✔
+>>* public void registerMyActionListener(MyActionListener l) ❌
+>>* public void addMyActionListener(ActionListener l) ❌
+#### case 2 (To Unregister A Listener)
+* Method name should be prefixed with remove.
+>>* public void removeMyActionListener(MyActionListener l) ✔
+>>* public void unRegisterMyActionListener(MyActionListener l) ❌
+>>* public void removeMyActionListener(ActionListener l) ❌
+>>* public void deleteMyActionListener(MyActionListener l) ❌
