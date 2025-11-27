@@ -34,7 +34,7 @@ public class Temp {
 >>* $
 >>* _
 
->>If we are using any other character, we will get compile time error.
+>>If we are *using any other character*, we will *get compile time error*.
 >>>**Ex:**
 >>>>total_number ✔  
 >>>>total# ❌
@@ -42,7 +42,7 @@ public class Temp {
 >>>**Ex:**
 >>>>total123 ✔  
 >>>>123total ❌
->3. Java identifiers are **case sensitive**. Ofcourse, Java language itself is treated as **case sensitive programming language**.
+>3. Java identifiers are *case sensitive*. Ofcourse, Java language itself is treated as *case sensitive programming language*.
 >>>**Ex:**
 ```java
 public class Temp {
@@ -53,8 +53,8 @@ public class Temp {
     }
 }
 ```
->4. There is no length limit for java identifiers. But, it is not recommended to take too lengthy identifiers.
->5. We **can not use reserved words** as identifiers.
+>4. There is *no length limit for java identifiers*. But, it is not recommended to take too lengthy identifiers.
+>5. We *can not use reserved words as identifiers*.
 >>>**Ex:**
 ```java
 public class Temp {
@@ -64,7 +64,7 @@ public class Temp {
     }
 }
  ```
->6. All predefined java class names and interface names we can use as identifiers. 
+>6. All *predefined java class names and interface names* we can *use as identifiers*. 
 >>>**Ex:**
 ```java
 public class Temp {
@@ -76,9 +76,9 @@ public class Temp {
     }
 }
 ```
->>Even though it is valid, but it is not a good programming practice. Because, it reduces readability and creates confusion.
+>>Even though it is *valid*, but it is *not a good programming practice*. Because, it *reduces readability and creates confusion*.
 
-1. Which of the following are valid java identifiers
+Q1. Which of the following are valid java identifiers
 >>>* total_number ✔
 >>>* total# ❌
 >>>* 123total ❌
@@ -90,9 +90,8 @@ public class Temp {
 >>>* Integer ✔
 >>>* Int ✔
 >>>* int ❌
----
 # Reserved Words
-* In java some words are reserved to represent some meaning or functionality are called Reserved Words.
+* In java some *words are reserved to represent some meaning or functionality* are called *Reserved Words*.
 ![alt text](image.png)
 ## Keywords For Datatypes (8):
 >* byte
@@ -149,15 +148,15 @@ public class Temp {
 ## Keyword For Return Type (1):
 >* void
 
-* In java return type is mandatory. If a method won't return anything, then we have to declare that method with void return type.
+* In java *return type* is *mandatory*. If a *method won't return anything*, then we have to *declare that method with void return type*.
 * But in C language, return type is optional and default return type in int.
 ## Unused Keywords:
 ### goto:
->Usage of goto created several problems in old languages and hence, SUN people banned this keyword in java.
+>*Usage of goto* created s*everal problems in old languages* and hence, *SUN people banned this keyword* in java.
 ### const:
->Use final instead of const.  
+>*Use final instead of const*.  
 
-Note: goto and const are unused keywords. If we are trying to use, we will get compile time error.
+Note: *goto* and *const* are *unused keywords*. If we are *trying to use*, we *will get compile time error*.
 ## Reserved Literals:
 >* true, false - values for boolean data type
 >* null - default value for object reference
@@ -171,8 +170,8 @@ Note: goto and const are unused keywords. If we are trying to use, we will get c
 }
 ```
 **Conclusions:**
-* All 53 reserved words in java contains only lower case alphabet symbols.
-* In java, we have only new keyword and there is no delete keyword because, destruction of useless objects is the responsibilty of garbage collector.
+* *All 53 reserved words* in java contains only *lower case alphabet symbols*.
+* In java, we have only new keyword and there is no delete keyword because, *destruction of useless objects* is the *responsibilty of garbage collector*.
 * The following are new keyowrds in java:
     * strictfp - version 1.2
     * assert - version 1.4
@@ -184,7 +183,7 @@ Note: goto and const are unused keywords. If we are trying to use, we will get c
 * *implements* but not implement
 * *import* but not imports
 * *const* but not constant
-1. which of the following list contains only java reserved words?
+Q1. which of the following list contains only java reserved words?
 >>* new, ~~delete~~
 >>* goto, ~~constant~~
 >>* break, continue, return, ~~exit~~
@@ -197,7 +196,7 @@ Note: goto and const are unused keywords. If we are trying to use, we will get c
 >>* byte, short, ~~Int~~
 >>* None of the above ✔
 
-2. Which of the following are java reserved words?
+Q2. Which of the following are java reserved words?
 >>* public ✔
 >>* static ✔
 >>* void ✔
@@ -208,13 +207,13 @@ Note: goto and const are unused keywords. If we are trying to use, we will get c
 # Data Types
 * In java, every variable and every expression has some type.
 * Each and every data type is clearly defined.
-* Every assignment should be checked by compiler for type compatibility.
-* Because of above reasons, we can conclude java language is **strongly typed programming language**.
-* Java is not considered as **pure object oriented programming language because, several OOP features are not satisfied** by java (like Operator Overloading, Multiple Inheritance, etc).
-* Moreover, we are depending on primitive data types which are non-objects.
+* *Every assignment* should be *checked by compiler for type compatibility*.
+* Because of above reasons, we can conclude java language is *strongly typed programming language*.
+* Java is not considered as *pure object oriented programming language* because, *several OOP features are not satisfied* by java (like *Operator Overloading, Multiple Inheritance*, etc).
+* Moreover, we are *depending on primitive data types* which are non-objects.
 ## Primitive Data Types
 ![alt text](image-1.png)
-* Except *boolean and char, remaining data types* are considered as *signed data* types because, we can represent both positive and negative numbers.
+* Except *boolean and char, remaining data types* are considered as *signed data* types because, we can *represent both positive and negative numbers*.
 ### byte:
 * size: 1 byte (8 bits)
 * MAX_Value: +127
@@ -224,7 +223,7 @@ Note: goto and const are unused keywords. If we are trying to use, we will get c
 ![alt text](image-2.png) 
 * The most significant bit act as sign bit.
 * 0 means +ve number and 1 means -ve number
-* Positive number will be represented directly in a memory, whereas negative numbers will be represented in 2's complement form.
+* *Positive number* will be represented directly in a *memory*, whereas *negative numbers* will be represented in *2's complement* form.
 ```java
 public class Temp {
      public static void main(String[] args) {
@@ -259,7 +258,7 @@ public class Temp {
      }
 }
 ```
-* *Byte* is the best choice if we want to handle data in terms of *streams* either from the file or from the network (File supported form or network supported form is byte).
+* *Byte* is the *best choice* if we want to *handle data in terms of streams* either from the file or from the network (File supported form or network supported form is byte).
 ### short:
 * This is the most rarely used data type in java.
 * size: 2 byte (16 bits)
@@ -307,8 +306,8 @@ public class Temp {
 * Range: -2<sup>63</sup> to 2<sup>63</sup>-1
 
 **Note:**
-* All the above data types(byte, short, int, long) meant for representing integral values.
-* If we want to represent floating point values, then we should go for floating point data types.
+* All the above data types(*byte, short, int, long*) meant for *representing integral values*.
+* If we want to *represent floating point values*, then we should go for *floating point data types*.
 ### Floating Point Data Types
 |                   |**float**         |**double**          |
 |-------------------|:-----------------|--------------------|
@@ -373,10 +372,10 @@ public class Temp {
 }
 ```
 ### char Data Type
-* *Old languages (like C/C++)* are *ASCII* code based and the number of different allowed ASCII code characters are <= 256.
+* *Old languages (like C/C++)* are *ASCII code based* and the number of different allowed *ASCII code characters are <= 256*.
 * To represent these 256 characters, 8 bits are enough. Hence, the size of char in old languages is 1 byte (8 bits).
-* But **java** is **unicode** based and the number of different unicode characters are greater than 256 and less than or equal to 65536.
-* To represent, these many characters 8 bits may not enough and compulsory we should go for 16 bits.
+* But *java* is *unicode based* and the *number of different unicode characters* are *greater than 256* and *less than or equal to 65536*.
+* To represent these many characters *8 bits may not enough* and compulsory we should *go for 16 bits*.
 * Hence, the size of char is 2 bytes.
 * size: 2 bytes
 * Range: 0 to 65535
@@ -406,7 +405,7 @@ public class Temp {
 }
 ```
 # Literals
-* A constant value which can be assigned to the variable is called literal.  
+* A *constant value* which can be *assigned to the variable* is called literal.  
 **Ex:**  
 >>>>int x = 10;
 
@@ -485,9 +484,9 @@ public class Temp {
     }
 }
 ```
-* There is no direct way to specifying byte and short literals explicitly.
+* There is *no direct way* to *specifying byte and short literals* explicitly.
 * But, indirectly we can specify.
-* Whenever we are assigning integral literal to the byte varialbe and if the variable within the range of byte then, compiler treats it automatically as byte literal.
+* Whenever we are assigning integral literal to the byte variable and if the variable within the range of byte then, compiler treats it automatically as byte literal.
 * Similarly, short literal also.
  ```java
  public class Temp {
@@ -511,9 +510,9 @@ public class Temp {
 }
 ```
 ## Floating Point Literals
-* By default, every floating point literal is of double type.
+* By default, *every floating point literal* is of *double type*.
 * Hence, we can not assign directly to the float variable.
-* But, we can specify floating point literal as float type by suffixed with 'f' or 'F'.
+* But, we can *specify floating point literal as float type* by *suffixed with 'f' or 'F'*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -528,7 +527,7 @@ public class Temp {
     }
 }
 ```
-* We can specify explicitly floating point literal as double type by suffixed with 'd' or 'D'.
+* We can *specify* explicitly *floating point literal as double type* by *suffixed with 'd' or 'D'*.
 * Of course, these convention is not required.
 ```java
 public class Temp {
@@ -544,7 +543,7 @@ public class Temp {
     }
 }
 ```
-* We can specify floating point literals only in decimal form and we can not specify in octal and hexadecimal forms.
+* We *can specify floating point literals* only in *decimal form* and we *can not specify* in *octal and hexadecimal forms*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -560,7 +559,7 @@ public class Temp {
     }
 }
 ```
-* We can assign integral literal directly to floating point variables and that integral literal can be specified either in decimal or octal or hexadecimal forms.
+* We *can assign integral literal* directly to *floating point variables* and that *integral literal can be specified either in decimal or octal or hexadecimal forms*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -587,7 +586,7 @@ public class Temp {
     }
 }
 ```
-* We can not assign floating point literals to integral types.
+* We *can not assign floating point literals* to *integral types*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -601,7 +600,7 @@ public class Temp {
     }
 }
 ```
-* We can specify the floating point literal even in exponential form (scientific notation).
+* We *can specify the floating point literal* even in *exponential form* (scientific notation).
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -675,7 +674,7 @@ public class Temp {
 }
 ```
 ## Char Literals
-* We can specify char literal as single character within single quotes.
+* We *can specify char literal* as *single character within single quotes*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -709,7 +708,7 @@ public class Temp {
     }
 }
 ```
-* We can specify char literal as integral literal which represents unicode value of the character and that integral literal can be specified either in decimal or octal or hexadecimal forms.
+* We *can specify char literal* as *integral literal* which represents unicode value of the character and that integral literal can be specified either in decimal or octal or hexadecimal forms.
 * But, allowed range is 0 to 65535.
 ```java
 public class Temp {
@@ -731,7 +730,7 @@ public class Temp {
     }
 }
 ```
-* We can represent char literal in unicode representation which is nothing but '\uxxxx' where 'xxxx' is 4-digit hexadecimal number.
+* We *can represent char literal* in *unicode representation* which is nothing but '\uxxxx' where 'xxxx' is 4-digit hexadecimal number.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -740,7 +739,7 @@ public class Temp {
     }
 }
 ```
-* Every escape character is a valid char literal.
+* *Every escape character* is a *valid char literal*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -767,7 +766,7 @@ public class Temp {
 |\\\             |Back slash      |
 
 
-1. Which of the following are valid?
+Q1. Which of the following are valid?
 >>* char ch = 65536;   ❌
 >>* char ch = 0XBeer;   ❌
 >>* char ch = \uface;   ❌
@@ -775,7 +774,7 @@ public class Temp {
 >>* char ch = '\m';     ❌
 >>* char ch = '\iface';     ❌
 ## String Literal
-* Any sequence of characters within double quotes is treated as string literal.
+* Any *sequence of characters within double quotes* is treated as *string literal*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -785,10 +784,10 @@ public class Temp {
 ```
 ## 1.7 Version Enhancements W.R.T Literals
 ### 1. Binary Literals
-* For integral data types, until 1.6 version we can specify literal value in the following ways (Decimal, Octal, Hexa Decimal Form).
-* But from 1.7 version onwards, we can specify literal value even in binary form also.
+* For *integral data types*, *until 1.6 version* we *can specify literal value in the following ways (Decimal, Octal, Hexa Decimal Form)*.
+* But *from 1.7 version* onwards, we *can specify literal value even in binary form also*.
 * Allowed digits are 0 and 1.
-* Literal value should be prefixed with '0b' or '0B'.
+* *Literal value* should be *prefixed with '0b' or '0B'*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -798,8 +797,8 @@ public class Temp {
 }
 ```
 ### 2. Usage of _ Symbol in Numeric Literals
-* From 1.7 version onwards, we can use '_' symbol between digits of numeric literal.
-* The main advantage of this approach is readability of the code will be improved.
+* From *1.7 version* onwards, we *can use '_' symbol between digits of numeric literal*.
+* The *main advantage* of this approach is *readability of the code will be improved*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -810,8 +809,8 @@ public class Temp {
     }
 }
 ```
-* At the time of compilation, these '_' will be removed automatically. Hence, after compilation the above lines will become "double d = 123456.789;".
-* We can use more than one '_' also between the digits.
+* *At the time of compilation*, these *'_' will be removed automatically*. Hence, after compilation the above lines will become "double d = 123456.789;".
+* We *can use more than one '_' also between the digits*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -822,7 +821,7 @@ public class Temp {
     }
 }
 ```
-* We can use '_' symbol only between the digits. If we are using anywhere else, we will get compile time error.
+* We *can use '_' symbol only between the digits*. If we are *using anywhere else*, we *will get compile time error*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -848,7 +847,7 @@ public class Temp {
 }
 ```
 ![alt text](image-3.png)
-* 8 byte long value, we can assign to 4 byte float variable. Because, both are following different memory representations internally.
+* *8 byte long value*, we *can assign to 4 byte float variable*. Because, *both are following different memory representations internally*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -857,8 +856,8 @@ public class Temp {
     }
 }
 ```
-* short data type can not be assigned to char. Because, short data can not hold maximum value of char.
-* char data type can not be assigned to short. Because, char data can not hold -ve sign.
+* *short data type can not be assigned to char*. Because, short data *can not hold maximum value of char*.
+* *char data type can not be assigned to short*. Because, char data *can not hold -ve sign*.
 
 # Arrays
 >1. Introduction
@@ -871,9 +870,9 @@ public class Temp {
 >8. Array element assignments
 >9. Array variable assignments
 ## Introduction
-* An array is an indexed collection of fixed number of homogenous data elements.
-* The main advantage of array is we can represent huge number of values by using single variable. So that, readability of the code will be improved.
-* But, the main disadvantage of array is fixed in size i.e., once we creates an array, there is no chance of increasing or decreasing the size based on our requirement. Hence, to use array concept, compulsory we should know the size in advance, which may not possible always.
+* An *array* is an *indexed collection of fixed number of homogenous data elements*.
+* The *main advantage* of array is we *can represent huge number of values by using single variable*. So that, *readability of the code will be improved*.
+* But, the *main disadvantage* of array is *fixed in size* i.e., *once we creates an array*, there is *no chance of increasing or decreasing the size* based on our requirement. Hence, *to use array concept*, compulsory we *should know the size in advance*, which *may not possible always*.
 ## Array Declaration
 ### 1-Dimensional Array Declaration
 ```java
@@ -881,8 +880,8 @@ int[] x;    //Recommended and valid
 int []x;    //valid
 int x[];    //valid
 ```
-* *int[] x;* is recommended because the name is clearly separated from type.
-* At the time of declaration, we can not specify the size. Otherwise, we will get compile time error.
+* *int[] x; is recommended* because the *name is clearly separated from type*.
+* At the *time of declaration*, we *can not specify the size*. *Otherwise*, we *will get compile time error*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -935,8 +934,8 @@ public class Temp {
     }
 }
 ```
-* If we want to specify dimension before the variable, that facility is applicable only for first variable in a declaration.
-* If we are trying to apply for remaining variables, we will get compile time error.
+* If we *want to specify dimension before the variable*, that *facility is applicable only for first variable in a declaration*.
+* If we are *trying to apply for remaining variables*, we *will get compile time error*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -967,7 +966,7 @@ public class Temp {
 }
 ```
 ## Array Creation
-* Every array in java is an object only. Hence, we can create array by using new operator.
+* Every *array in java* is *an object only*. Hence, we *can create array* by *using new operator*.
 **Ex:**
 ```java
 public class Temp {
@@ -977,7 +976,7 @@ public class Temp {
 }
 ```
 >>>>>>>>>![alt text](image-4.png)
-* For every array type, corresponding classes are available and these classes are part of java language and not available to the programmer level.
+* For *every array type*, *corresponding classes are available* and these classes *are part of java language* and *not available to the programmer level*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -994,7 +993,7 @@ public class Temp {
 |short[]   |[S                      |
 |byte[]    |[B                      |
 |boolean[] |[Z                      |
-1. At the time of array creation, compulsory we should specify the size. Otherwise, we will get compile time error.
+1. At the *time of array creation*, *compulsory we should specify the size*. Otherwise, we will get compile time error.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1008,7 +1007,7 @@ public class Temp {
     }
 }
 ```
-2. It is legal to have an array with size 0 in java.
+2. It is *legal to have an array with size 0* in java.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1016,7 +1015,7 @@ public class Temp {
     }
 }
 ```
-3. If we are trying to specify array size with some negative int value, then we will get runtime exception saying negative array size exception.
+3. If we are *trying to specify array size with some negative int value*, then we will *get runtime exception saying negative array size exception*.
 **Ex:**
 ```java
 public class Temp {
@@ -1029,7 +1028,7 @@ public class Temp {
     }
 }
 ```
-4. To specify array size, the allowed data types are byte, short, char, int. If we are trying to specify any other type, then we wil get compile time error.
+4. To *specify array size*, the *allowed data types are byte, short, char, int*. If we are *trying to specify any other type*, then we wil *get compile time error*.
 **Ex:**
 ```java
 public class Temp {
@@ -1049,7 +1048,7 @@ public class Temp {
     }
 }
 ```
-5. The maximum allowed array size in java is 21474843647 which is the maximum value of int data type.
+5. The *maximum allowed array size in java* is *21474843647* which is the maximum value of int data type.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1063,10 +1062,10 @@ public class Temp {
     }
 }
 ```
-6. Even in the first case, we may get runtime exception if sufficient heap memory not available.
+6. Even *in the first case*, we *may get runtime exception if sufficient heap memory not available*.
 ### 2-Dimensional Array Creation
-* In java, 2-D array not implemented by using matrix style. Sun people followed array of arrays approach for multi-dimensional array creation.
-* The main advantage of this approach is memory utilization will be improved.
+* In java, *2-D array not implemented* by *using matrix style*. *Sun people* followed *array of arrays approach for multi-dimensional array creation*.
+* The *main advantage* of this approach is *memory utilization will be improved*.
 **Ex1: Memory Structure and Corresponding Java Code**
 ```java
 public class Temp {
@@ -1090,7 +1089,7 @@ public class Temp {
     }
 }
 ```
-Q. Which of the following array declarations are valid?
+Q1. Which of the following array declarations are valid?
 >* int[] a = new int[];            ❌    
 >* int[] a = new int[3];           ✔
 >* int[][] a = new int[][];        ❌
@@ -1102,7 +1101,7 @@ Q. Which of the following array declarations are valid?
 >* int[][][] a = new int[3][][5];  ❌
 >* int[][][] a = new int[][4][5];  ❌
 ## Array Initialization
-* Once we creates an array, every element by default initialized with default values.
+* *Once we creates an array*, every *element by default initialized with default values*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1112,7 +1111,7 @@ public class Temp {
     }
 }
 ```
-**Note:** Whenever we are trying to print any reference variable, internally 2 string method will be called which is implemented by default to return the string in following form "classname@hashcode_in_hexadecimal_form".
+**Note:** Whenever we are *trying to print any reference variable*, internally 2 string method will be called which is implemented by default to return the string in following form *"classname@hashcode_in_hexadecimal_form"*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1137,8 +1136,8 @@ public class Temp {
     }
 }
 ```
-**Note:** If we are trying to perform any operation on null, then we will get runtime exception saying null pointer exception.
-* Once we creates an array, every array element by default initialized with default values. If we are not satisfied by default values then we can overwrite these values with our customized values.
+**Note:** If we are *trying to perform any operation on null*, then we will *get runtime exception saying null pointer exception*.
+* Once we creates an array, every array element by default initialized with default values. If we are *not satisfied by default values* then we *can overwrite these values with our customized values*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1182,7 +1181,7 @@ public class Temp {
     }
 }
 ```
-**Note:** If we are trying to access array element with out of range index (either positive value or negative int value) then we will get run time exception saying array index out of bounds exception.
+**Note:** If we are *trying to access array element with out of range index* (either positive value or negative int value) then we will *get run time exception saying array index out of bounds exception*.
 ## Array Declaration, Creation & Initialization in Single Line
 * We can declare, create and initialize an array in a single line (shortcut representation).
 ```java
@@ -1256,8 +1255,8 @@ public class Temp {
 ```
 ## length vs length()
 ### length
-* length is a final variable applicable for arrays.
-* length variable represents the size of the array.
+* *length* is a *final variable applicable for arrays*.
+* *length* variable *represents the size of the array*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1275,8 +1274,8 @@ public class Temp {
 }
 ```
 ### length()
-* length() is a final method applicable for string objects.
-* length() method returns number of characters present in the string.
+* *length()* is a *final method applicable for string objects*.
+* *length()* method returns *number of characters present in the string*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1293,7 +1292,7 @@ public class Temp {
     }
 }
 ```
-**Note:** length variable applicable for array but not for string objects. Whereas length() applicable for string objects but not for arrays.
+**Note:** *length variable* applicable for *array but not for string objects*. Whereas *length()* applicable for *string objects but not for arrays*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1319,7 +1318,7 @@ public class Temp {
     }
 }
 ```
-* In multi dimensional arrays, length variable represents only base size, but not total size.
+* In *multi dimensional arrays, length variable represents only base size, but not total size*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1329,23 +1328,23 @@ public class Temp {
     }
 }
 ```
-* There is no direct way to find total length of multi dimensional array. But, indirectly we can find as follows:
+* There is *no direct way to find total length of multi dimensional array*. But, indirectly we can find as follows:
 ```java
 x[0].length+x[1].length+x[2].length+....
 ```
 ## Anonymous Arrays
-* Sometimes we can declare an array without name. Such type of name less array is called anonymous array.
-* The main purpose of anonymous array is just for instant use (one time usage).
+* Sometimes we *can declare an array without name*. Such type of name less array is called *anonymous array*.
+* The *main purpose of anonymous array* is *just for instant use* (one time usage).
 * We can create anonymous array as follows
 ```java
 new int[] {10,20,30,40};
 ```
-* While creating anonymous array, we can not specify the size. Otherwise, we will get compile time error.
+* While *creating anonymous array*, we *can not specify the size*. Otherwise, we *will get compile time error*.
 ```java
 new int[4] {10,20,30,40};   //❌
 new int[] {10,20,30,40};    //✔
 ```
-* We can create multi-dimensional anonymous array also
+* We *can create multi-dimensional anonymous array also*.
 ```java
 new[][] {{10,20},{30,40,50}};
 ```
@@ -1370,7 +1369,7 @@ public class Temp {
 * In the above example, just to call Sum method, we required an array, but after completing Sum method call, we are not using that array anymore. Hence, for this one time requirement anonymous array is the best choice.
 ## Array Element Assignments
 ### Case 1
-* In the case of primitive type arrays, as array elements we can provide any type which can be implicitly promoted to declared type.
+* In the case of *primitive type arrays*, as array elements we can *provide any type which can be implicitly promoted to declared type*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1390,9 +1389,9 @@ public class Temp {
     }
 }
 ```
-* In the case of float type arrays, the allowed data types are byte, short, char, int, long, float.
+* In the case of *float type arrays*, the allowed data types are *byte, short, char, int, long, float*.
 ### Case 2
-* In the case of object type array, as array elements we can provide either declared type objects or its child class objects.
+* In the case of *object type array*, as array elements we can provide *either declared type objects or its child class objects*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1413,7 +1412,7 @@ public class Temp {
 }
 ```
 ### Case 3
-* For interface type array, as array elements its implementation class ojects are allowed.
+* For *interface type array*, as array elements *its implementation class ojects* are allowed.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1436,7 +1435,7 @@ public class Temp {
 |Interface Type Array|Its implementation class objects are allowed|
 ## Array Variable Assignments
 ### Case 1
-* Element level promotions are not applicable at array level.
+* *Element level promotions* are *not applicable at array level*.
 For example, char element can be promoted to int type, whereas char[] can not be promoted to int[].
 ```java
 public class Temp {
@@ -1453,7 +1452,7 @@ public class Temp {
     }
 }
 ```
-Q. Which of the following promotions will be performed automatically?
+Q1. Which of the following promotions will be performed automatically?
 1. char -> int             ✔
 2. char[] -> int[]         ❌
 3. int -> double           ✔
@@ -1462,7 +1461,7 @@ Q. Which of the following promotions will be performed automatically?
 6. float[] -> int[]        ❌
 7. String -> Object        ✔
 8. String[] -> Object[]    ✔
-* But, in the case of Object type array, child class type array can be promoted to parent class type array.
+* But, in the case of *Object type array*, *child class type array can be promoted to parent class type array*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1472,7 +1471,7 @@ public class Temp {
 }
 ```
 ### Case 2
-* Whenever we are assigning one array to another array, internal elements won't be copied. Just reference variables will be reassigned.
+* Whenever we are *assigning one array to another array*, *internal elements won't be copied*. Just *reference variables will be reassigned*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1484,7 +1483,7 @@ public class Temp {
 }
 ```
 ### Case 3
-* Whenever we are assigning one array to another array, the dimensions must be matched. For example, in the place of 1D int array, we should provide 1D array only. If we are trying to provide any other dimension, then we will get compile time error.
+* Whenever we are *assigning one array to another array*, the *dimensions must be matched*. For example, in the place of 1D int array, we should provide 1D array only. If we are trying to provide any other dimension, then we will get compile time error.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1505,7 +1504,7 @@ public class Temp {
     }
 }
 ```
-**Note:** Whenever we are assigning one array to another array, both dimensions and types must be matched. But, sizes are not required to match.
+**Note:** Whenever we are *assigning one array to another array*, *both dimensions and types must be matched*. But, *sizes are not required to match*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1583,9 +1582,9 @@ public class Temp {
 # Types of Variables
 ## Division 1
 * Based on type of value represented by a variable, all variables are divided into 2 types:
->>1. Primitive variables can be used to represent primitive values.
+>>1. *Primitive variables* can be used to *represent primitive values*.
 >>>>>int x = 10;
->>2. Reference variables can be used to refer objects.
+>>2. *Reference variables* can be used to *refer objects*.
 >>>>>Student s = new Student();
 ## Division 2
 * Based on position of declaration and behavior, all variables are divided into 3 types:
@@ -1593,13 +1592,13 @@ public class Temp {
 >>2. Static variables
 >>3. Local Variables
 ### Instance Variables
-* If the value of a variable is varied from object to object, such type of variables are called instance variables.
-* For every object, a separate copy of instance variables will be created.
-* Instance variables should be declare withn the class directly but outside of any method or block or constructor.
-* Instance variable will be created at the time of object creation and destroyed at the time of object destruction. Hence, the scope of instance variable is exactly same as scope of object.
-* Instance variables will be stored in the heap memory as the part of the object.
-* We can not access instance variables directly from static area. But, we can access by using object reference.
-* But, we can access instance variables directly from instance area.
+* If the *value of a variable is varied from object to object*, such type of variables are called *instance variables*.
+* For *every object*, a *separate copy of instance variables will be created*.
+* *Instance variables* should be *declare within the class* directly but *outside of any method or block or constructor*.
+* Instance variable will be *created at the time of object creation* and *destroyed at the time of object destruction*. Hence, the *scope* of instance variable is *exactly same as scope of object*.
+* Instance variables will be *stored in the heap memory* as the part of the object.
+* We *can not access* instance variables directly *from static area*. But, we *can access* by *using object reference*.
+* But, we *can access* instance variables directly *from instance area*.
 ```java
 public class Temp {
     int x = 10;
@@ -1618,7 +1617,7 @@ public class Temp {
     }
 }
 ```
-* For instance variables, JVM will always provide default values and we are not required to perform initialization explicitly.
+* For instance variables, *JVM* will always *provide default values* and we are *not required to perform initialization explicitly*.
 ```java
 public class Temp {
     int x;
@@ -1634,13 +1633,13 @@ public class Temp {
     }
 }
 ```
-* Instance variables also known as object level variables or attributes.
+* Instance variables also *known as object level variables or attributes*.
 ### Static Variables
-* If the value of a variable is not varied from object to object, then it is not recommended to declare the variable as instance variable.
-* We have to declare such type variables at class level by using static modifier.
-* In the case of instance variables, for every object, a separate copy will be created but in the case of static variables, a single copy will be created at class level and shared by every object of the class.
-* Static variables should be declared within the class directly, but outside of any method or block or constructor.
-* Static variables will be created at the time of class loading and destroyed at the time of class unloading. Hence, scope of static variable is exactly same as scope of .class file.
+* If the *value of a variable* is *not varied from object to object*, then it is *not recommended* to *declare the variable as instance variable*.
+* We *have to declare such type variables at class level* by *using static modifier*.
+* In the *case of instance variables*, *for every object, a separate copy will be created* but in the *case of static variables*, a *single copy will be created at class level* and *shared by every object of the class*.
+* Static variables should be *declared within the class* directly, but *outside of any method or block or constructor*.
+* *Static variables* will be *created at the time of class loading* and *destroyed at the time of class unloading*. Hence, *scope of static variable* is exactly *same as scope of .class file*.
 #### Execution of .class file (java Temp)
 1. Start JVM
 2. Create & Start main thread
@@ -1650,8 +1649,8 @@ public class Temp {
 6. Unload Temp.class (Static variables will be destructed)
 7. Terminate main thread
 8. Shutdown JVM
-* Static variables will be stored in method area.
-* We can access static variables either by object reference or by class name. But, recommended to use class name.
+* *Static variables* will be *stored in method area*.
+* We *can access static variables either by object reference or by class name*. But, *recommended* to *use class name*.
 * Within the same class, it is not required to use class name and we can access directly.
 ```java
 class Temp{
@@ -1664,7 +1663,7 @@ class Temp{
     }
 }
 ```
-* We can access static variables directly from both instance and static areas.
+* We *can access static variables* directly from *both instance and static areas*.
 ```java
 class Temp{
     static int x = 10;
@@ -1676,7 +1675,7 @@ class Temp{
     }
 }
 ```
-* For static variables, JVM will provide default values and we are not required to perform initialization explicitly.
+* For *static variables*, *JVM* will *provide default values* and we are *not required to perform initialization explicitly*.
 ```java
 class Temp{
     static int x;
@@ -1689,7 +1688,7 @@ class Temp{
     }
 }
 ```
-* Static variables also known as class level variables or fields.
+* *Static variables* also known as *class level variables or fields*.
 ```java
 class Temp{
     static int x = 10;
@@ -1705,9 +1704,9 @@ class Temp{
 ```
 >>>>>![alt text](image-9.png)
 ### Local Variables
-* Sometimes to meet temporary requirements of the programmer, we can declare variables inside a method or block or constructor. Such type of variables are called local variables or temporary variables or stack variables or automatic variables.
-* Local variables will be stored inside the stack memory.
-* Local variables will be created while executing the block in which we declared it. Once, block execution completes automatically local variable will be destroyed. Hence, the scope of local variable is the block in which we declared it.
+* Sometimes *to meet temporary requirements of the programmer*, we *can declare variables inside a method or block or constructor*. Such type of variables are called *local variables or temporary variables or stack variables or automatic variables*.
+* *Local variables* will be *stored inside the stack memory*.
+* *Local variables* will be *created while executing the block in which we declared it*. *Once, block execution completes automatically local variable will be destroyed*. Hence, the *scope of local variable* is the *block in which we declared it*.
 ```java
 class Temp{
     public static void main(String[] args) {
@@ -1751,7 +1750,7 @@ class Temp{
     }
 }
 ```
-* For local variables, JVM won't provide default values. Compulsory we should perform initialization explicitly. Before using that variable i.e., if we are not using then it is not required to perform initialization.
+* For *local variables*, *JVM won't provide default values*. *Compulsory* we *should perform initialization explicitly before using that variable* i.e., if we are not using then it is not required to perform initialization.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1810,9 +1809,9 @@ public class Temp {
 }
 ```
 **Note:**
-* It is not recommended to perform initialization for local variables inside logical blocks. Because, there is no guarantee for the execution of these blocks always at the run time.
-* It is highly recommended to perform initialization for local variables at the time of declaration atleast with default values.
-* The only applicable modifier for local variables is final. By mistake, if we are trying to apply any other modifier then we will get compile time error.
+* It is *not recommended* to *perform initialization for local variables inside logical blocks*. Because, there is *no guarantee for the execution of these blocks always at the run time*.
+* It is *highly recommended to perform initialization* for local variables *at the time of declaration atleast with default values*.
+* The *only applicable modifier for local variables* is *final*. *By mistake*, if we are *trying to apply any other modifier* then we *will get compile time error*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1856,19 +1855,19 @@ public class Temp {
     }
 }
 ```
-* If we are not declaring with any modifier then by default it is default. But, this rule is applicable only for instance and static variables, but not for local variables.
+* If we are *not declaring with any modifier* then *by default it is default*. But, this *rule is applicable only for instance and static variables*, but *not for local variables*.
 
 **Conclusions:**
-* For instance and static variables, JVM will provide default values and we are not required to perform initialization explicitly. But for local variables, JVM won't provide default values. Compulsory, we should perform initialization expliciltly before using that variable.
-* Instance and static variables can be accessed by multiple threads simultaneously. Hence, these are not thread safe. But, in the case of local variables, for every thread a separate copy will be created and hence, local variables are thread safe.
+* *For instance and static variables*, *JVM* will *provide default values* and we are *not required to perform initialization explicitly*. But *for local variables*, *JVM won't provide default values*. Compulsory, we *should perform initialization expliciltly before using that variable*.
+* *Instance and static variables* can be *accessed by multiple threads simultaneously*. Hence, these are* not thread safe*. But, in the case of *local variables, for every thread a separate copy will be created* and hence, *local variables are thread safe*.
 
 |Types of variables|Thread Safe|
 |------------------|-----------|
 |Instance Variable |NO         |
 |Static Variable   |NO         |
 |Local Variable    |YES        |
-* Every variable in java should be either instance or static or local.
-* Every variable in java should be either primitvie or reference. Hence, various possible combinations of variables in java are 
+* *Every variable* in java *should be either instance or static or local*.
+* *Every variable* in java *should be either primitvie or reference*. Hence, various possible combinations of variables in java are 
 ![alt text](image-10.png)
 ```java
 public class Temp {
@@ -1950,11 +1949,11 @@ public class Temp {
     }
 }
 ```
-* Once, we creates an array, every array element by default initialized with default values irrespective of whether it is instance or static or local array.
+* Once, we *creates an array*, *every array element by default initialized with default values irrespective of whether it is instance or static or local array*.
 # var-arg Methods (Variable number of Argument Methods)
-* Until 1.4 version, we can not declare a method with variable number of arguments. If there is a change in number of arguments, compulsory we should go for new method. It increases length of the code and reduces the readability.
-* To overcome this problem, SUN people introduced var-arg methods in 1.5 version. According to this, we can declare a method which can take variable number of arguments. Such type of methods are called var-arg methods.
-* We can declare var-arg method as follows m1(int... x). We can call this method by passing any number of int values including 0 number.
+* *Until 1.4 version*, we *can not declare a method with variable number of arguments*. *If there is a change in number of arguments*, compulsory we *should go for new method*. It *increases length of the code* and *reduces the readability*.
+* *To overcome* this problem, *SUN people introduced var-arg methods in 1.5 version*. According to this, we *can declare a method which can take variable number of arguments*. Such type of methods are called var-arg methods.
+* We *can declare var-arg method as follows m1(int... x)*. We can *call this method by passing any number of int values including 0 number*.
 ```java
 public class Temp {
     public static void sum(int... numbers) {
@@ -1983,28 +1982,28 @@ public class Temp {
     }
 }
 ```
-* Internally, var-arg parameter will be converted into 1D array. Hence, within the var-arg method we can differentiate values by using index.
+* *Internally, var-arg parameter* will be *converted into 1D array*. Hence, *within the var-arg method* we *can differentiate values by using index*.
 ## Case 1
-Which of the following are valid var-arg method declarations?
-1. m1(int... x)     ✔
-2. m1(int ...x)     ✔
-3. m1(int...x)      ✔
-4. m1(int x...)     ❌
-5. m1(int. ..x)     ❌
-6. m1(int .x..)     ❌
+Q1. Which of the following are valid var-arg method declarations?
+>1. m1(int... x)     ✔
+>2. m1(int ...x)     ✔
+>3. m1(int...x)      ✔
+>4. m1(int x...)     ❌
+>5. m1(int. ..x)     ❌
+>6. m1(int .x..)     ❌
 ## Case 2
-* We can mix var-arg parameter with normal parameter.
+* We *can mix var-arg parameter with normal parameter*.
 >>>m1(int x, int...y)
 >>>m1(String x, double... y)
 ## Case 3
-* If we mix normal parameter with var-arg parameter, then var-arg parameter should be last parameter.
+* *If we mix normal parameter with var-arg parameter*, then *var-arg parameter should be last parameter*.
 >>>m1(double... d, String s)    ❌
 >>>m1(char ch, String s)        ✔
 ## Case 4
-* Inside var-arg method, we can take only 1 var-arg parameter and we can not take more than 1 var-arg parameter.
+* *Inside var-arg method*, we *can take only 1 var-arg parameter* and we *can not take more than 1 var-arg parameter*.
 >>>m1(int... x, double... d) ❌
 ## Case 5
-* Inside a class, we can not declare var-arg method and corresponding 1D arra method simultaneously. Otherwise we will get compile time error.
+* *Inside a class*, we *can not declare var-arg method* and *corresponding 1D arra method simultaneously*. Otherwise we will *get compile time error*.
 ```java
 public class Temp {
     public static void m1(int... x) {
@@ -2036,20 +2035,20 @@ public class Temp {
     }
 }
 ```
-* In general, var-arg method will get least priority i.e., if no other method matched then only var-arg method will get the chance. It is exactly same as default case inside switch.
+* In general, *var-arg method* will *get least priority* i.e., *if no other method matched then only var-arg method will get the chance*. It is *exactly same as default case inside switch*.
 ## Equivalence Between var-arg Parameter and 1D Array
 ### Case 1
-* Wherever 1D array present, we can replace with var-arg parameter.
+* *Wherever 1D array present*, we *can replace with var-arg parameter*.
 >>>m1(int[] x) == m1(int...x)
 >>>main(String[] args) == main(String... args)
 ### Case 2
-* Wherever var-arg parameter present, we can not replace with 1D array.
+* *Wherever var-arg parameter present*, we *can not replace with 1D array*.
 >>>m1(int... x) != m1(int[] x)
 
 **Note:**
-* m1(int... x) -> we can call this method by passing a group of int values and x will become 1D array.
+* *m1(int... x)* -> we *can call this method by passing a group of int values* and *x* will *become 1D array*.
 >>>m1(int... x) == int[] x
-* m1(int[]... x) -> we can call this method by passing a group of 1D int arrays and x will become 2D int array.
+* *m1(int[]... x)* -> we *can call this method by passing a group of 1D int arrays* and *x* will *become 2D int array*.
 >>>m1(int[]... x) == int[][] x
 ```java
 public class Temp {
@@ -2070,8 +2069,8 @@ public class Temp {
 }
 ```
 # main Method
-* Whether class contains main() or not, and whether main method is declared according to requirement or not, these things won't be checked by compiler.
-* At run time, JVM is responsible to check these things. If JVM unable to find main(), then we will get run time exception saying "No such method error: main".
+* *Whether class contains main() or not, and whether main method is declared according to requirement or not, these things won't be checked by compiler.*
+* *At run time*, *JVM* is *responsible to check these things*. *If JVM unable to find main()*, then we *will get run time exception saying "No such method error: main"*.
 ```java
 public class Temp {
     /*
@@ -2088,16 +2087,16 @@ public class Temp {
 >* void - main() method won't return anything to JVM
 >* main - This is the name which is configured inside JVM
 >* String[] args - Command-line arguments
-* The above syntax is very strict and if we perform any change then we will get run time exception saying "no such method error: main".
+* The above *syntax is very strict* and *if we perform any change then we will get run time exception saying "no such method error: main"*.
 * Even though above syntax is very strict, the following changes are acceptable.
->1. Instead of public static, we can take static public i.e., the order of modifiers is not important.
->2. We can declare String[] in any acceptable form.
+>1. *Instead of public static*, we can *take static public* i.e., the *order of modifiers is not important*.
+>2. We *can declare String[] in any acceptable form*.
 >>* main(String[] args)
 >>* main(String []args)
 >>* main(String args[])
->3. Instead of args, we can take any valid java identifier.
+>3. *Instead of args*, we *can take any valid java identifier*.
 >>* main(String[] rudra)
-* We can replace String[] with var-arg parameter.
+* We *can replace String[]* with *var-arg parameter*.
 >>* main(String... args)
 * We can declare main() with the following modifiers:
 >>* final
@@ -2110,7 +2109,7 @@ public class Temp {
     }
 }
 ```
-Which of the following main() declarations are valid?
+Q1. Which of the following main() declarations are valid?
 >1. public static void main(String args)  ❌
 >2. public static void Main(String[] args)  ❌
 >3. public void main(String[] args)     ❌
@@ -2118,9 +2117,9 @@ Which of the following main() declarations are valid?
 >5. final synchronized strictfp public void main(String[] args) ❌
 >6. final synchronized strictfp public static void main(String[] args)  ✔
 >7. public static void main(String... args) ✔
-* We won't get compile time error anywhere, but except last 2 cases, in remaining we will get run time exception saying "no such method error: main".
+* We *won't get compile time error anywhere, but except last 2 cases*, *in remaining* we *will get run time exception saying "no such method error: main"*.
 ## Case 1
-* Overloading of the main() is possible, but JVM will always call String[] argument main() only. The other overloaded method we have call explicitly like normal method call.
+* *Overloading of the main()* is *possible*, but *JVM* will *always call String[] argument main() only*. The other overloaded method we have call explicitly like normal method call.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -2132,7 +2131,7 @@ public class Temp {
 }
 ```
 ## Case 2
-* Inheritance concept applicable for main(). Hence, while executing child class, if child does not contain main(), then parent class main() will be executed.
+* *Inheritance concept applicable for main()*. Hence, while executing child class, *if child does not contain main()*, then *parent class main() will be executed*.
 ```java
 public class Parent{
     public static void main(String[] args) {
@@ -2167,12 +2166,12 @@ java Child
 Child main
 */
 ```
-* It seems overriding concept applicable for main(), but it is not overriding and it is method hiding.
+* It seems *overriding concept applicable for main()*, but it is *not overriding and it is method hiding*.
 
-**Note:** For main(), inheritance and overloading concepts are applicable. But, overriding concept is not applicable. Instead of overriding, method hiding is applicable.
+**Note:** *For main()*, *inheritance and overloading concepts are applicable*. But, *overriding concept* is *not applicable*. *Instead of overriding, method hiding* is *applicable*.
 ## 1.7 Version Enhancements W.R.T main()
-* Until 1.6 version, if the class does not contain main() then we will get runtime exception saying "No such method error: main".
-* But from 1.7 version, instead of no such method error, we will get more elaborated error information.
+* *Until 1.6 version*, *if the class does not contain main()* then we *will get runtime exception saying "No such method error: main"*.
+* But *from 1.7 version*, instead of no such method error, we *will get more elaborated error information*.
 ```java
 public class Temp {
     /*
@@ -2187,7 +2186,7 @@ or a JavaFX application class must extend javafx.application.Application
     */
 }
 ```
-* From 1.7 version onwards, main() method is mandatory to start program execution. Hence, even though class contains static block, it won't be executed if the class does not contain main().
+* *From 1.7 version onwards*, *main() method* is *mandatory to start program execution*. Hence, *even though class contains static block*, it *won't be executed if the class does not contain main()*.
 ```java
 public class Temp {
     static{
@@ -2244,17 +2243,17 @@ public class Temp {
 }
 ```
 ![alt text](image-11.png)
-* Without writing main(), it is possible to print statements to the console using static block. But, this rule is applicable until 1.6 version.
-* From 1.7 version, it is impossible to print statements to the console without writing main() method.
+* *Without writing main()*, it is *possible to print statements to the console using static block*. But, *this rule is applicable until 1.6 version*.
+* *From 1.7 version*, it is *impossible to print statements to the console without writing main() method*.
 # Command Line Arguments
-* The arguments which are passing from command prompt are called command line arguments.
-* With these command line arguments, JVM will create an array and by passing that array as argument, JVM will call main().
+* The *arguments* which are *passing from command prompt* are called *command line arguments*.
+* *With these command line arguments, JVM* will *create an array and by passing that array as argument*, *JVM* will *call main()*.
 >>>java Test A B C
 >* A - args[0]
 >* B - args[1]
 >* C - args[2]
 >* args.length = 3
-* The main objective of command line arguments is we can customize behavior of the main().
+* The *main objective of command line arguments* is we *can customize behavior of the main()*.
 ## Case 1
 ```java
 public class Temp {
@@ -2317,7 +2316,7 @@ public class Temp {
 }
 ```
 ## Case 3
-* Within main(), command line arguments are available in String form.
+* *Within main(), command line arguments* are *available in String form*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -2330,7 +2329,7 @@ public class Temp {
 }
 ```
 ## Case 4
-* Usually space( ) itself is the separator between command line arguments. If our command line argument itself contains space, then we have to enclose that command line argument within double quotes ("").
+* *Usually space( ) itself* is the *separator between command line arguments*. *If our command line argument itself contains space*, then we *have to enclose that command line argument within double quotes ("")*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -2344,8 +2343,8 @@ public class Temp {
 ```
 
 # Java Coding Standards
-* Whenever we are writing java code, it is highly recommended to follow coding standards. Whenever we are writing any component, it's name should reflect the purpose of that component (functionality).
-* The main advantage of this approach is readability and maintainability of the code will be improved.
+* Whenever we are writing java code, it is *highly recommended to follow coding standards*. Whenever we are *writing any component, it's name should reflect the purpose of that component (functionality)*.
+* The *main advantage* of this approach is *readability and maintainability of the code will be improved*.
 ```java
 class A{
     public int m1(int x, int y){
@@ -2363,24 +2362,24 @@ public class CalculatorApp {
 }
 ```
 ## Coding Standards For Classes
-* Usually, class names are nouns. They should start with upper case character and if it contains multiple words, every inner word should starts with upper case character.
+* Usually, *class names* are *nouns*. They should *start with upper case character* and *if it contains multiple words, every inner word should starts with upper case character*.
 >>**Ex:** String, StringBuffer, etc.
 ## Coding Standards For Interfaces
-* Usually, interface names are adjectives. They should start with upper case character and if it contains multiple words, every inner word should starts with upper case character.
+* Usually, *interface names* are *adjectives*. They should *start with upper case character* and *if it contains multiple words, every inner word should starts with upper case character*.
 >>**Ex:** Runnable, Serializable, Comparable, etc.
 ## Coding Standards For Methods
-* Usually, method names are either verbs or verb-noun combination. They should start with lower case alphabet symbol and if it contains multiple words, then every inner word should starts with upper case character (camel case convention).
+* Usually, *method names* are *either verbs or verb-noun combination*. They *should start with lower case alphabet symbol* and *if it contains multiple words, then every inner word should starts with upper case character (camel case convention)*.
 >>**Ex:** print(), run(), sleep(), getName(), setSalary(), etc.
 ## Coding Standards For Variables
-* Usually, variable names are nouns. They should start with lower case alphabet symbol and if it contains multiple words, then every inner word should starts with upper case character (camel case convention).
+* Usually, *variable names* are *nouns*. They should *start with lower case alphabet symbol* and *if it contains multiple words, then every inner word should starts with upper case character (camel case convention)*.
 >>**Ex:** name, age, salary, mobileNumber, etc.
 ## Coding Standards For Constants
-* Usually, constant names are nouns. They should contain only upper case characters and if it contains multiple words, then these words are separated with "_".
+* Usually, *constant names* are *nouns*. They should *contain only upper case characters* and *if it contains multiple words, then these words are separated with "_"*.
 >>**Ex:** MAX_VALUE, MAX_PRIORITY, MIN_PRIORITY, PI.
 
-**Note:** Usually, we can declare constants with public, static and final modifiers.
+**Note:** Usually, we *can declare constants with public, static and final modifiers*.
 ## JavaBean Coding Standards
-* A javabean is a simple java class with private properties and public getter and setter methods.
+* A *javabean* is *a simple java class with private properties* and *public getter* and *setter methods*.
 ```java
 public class StudentBean {
     //class name ends with 'Bean" is not official convention from SUN.
@@ -2394,11 +2393,11 @@ public class StudentBean {
 }
 ```
 ### Syntax For Setter Method
-* It should be public method. The return type should be void. Method name should be prefixed with set. It should take some argument i.e., it should not be no argument method.
+* It *should be public method*. The *return type* should be *void*. *Method name* should be *prefixed with set*. It *should take some argument* i.e., it *should not be no argument method*.
 ### Syntax For Getter Method
-* It should be public method. The return type should not be void. Method name should be prefixed with get. It should not take any argument.
+* It *should be public method*. The *return type* should not be *void*. *Method name* should be *prefixed with get*. It *should not take any argument*.
 
-**Note:** For boolean properties, getter method name can be prefixed with either get or is. But recommended to use is.
+**Note:** For *boolean properties*, *getter method* name can be *prefixed with either get or is*. But *recommended to use is*.
 ```java
 private boolean empty;
 public boolean getEmpty(){
@@ -2410,12 +2409,12 @@ public boolean isEmpty(){   //recommended
 ```
 ### Coding Standards For Listeners
 #### Case 1 (To Register A Listener)
-* Method name should be prefixed with add.
+* *Method name* should be *prefixed with add*.
 >>* public void addMyActionListener(MyActionListener l) ✔
 >>* public void registerMyActionListener(MyActionListener l) ❌
 >>* public void addMyActionListener(ActionListener l) ❌
 #### case 2 (To Unregister A Listener)
-* Method name should be prefixed with remove.
+* *Method name* should be *prefixed with remove*.
 >>* public void removeMyActionListener(MyActionListener l) ✔
 >>* public void unRegisterMyActionListener(MyActionListener l) ❌
 >>* public void removeMyActionListener(ActionListener l) ❌
