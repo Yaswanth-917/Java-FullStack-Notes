@@ -9,7 +9,7 @@
 8. short circuit Operators
 9. type cast Operator
 10. assignment Operators
-11. consitional Operator
+11. conditional Operator
 12. new Operator
 13. [] Operator
 14. operator precedence
@@ -229,10 +229,164 @@ public class Main {
 }
 ```
 ## Arithmetic Exception
-* It is *Runtime Exceptio*n but *not compile time error*.
+* It is *Runtime Exception* but *not compile time error*.
 * It is *possible only in integral arithmetic* but *not in floating point arithmetic*.
 * The only *operators which cause Arithmetic Excetion* are */* and *%*.
 
+# String Concatenation Operator (+)
+* The *only overloaded operator in java* is *+ operator*. *Sometimes* it *acts as arithmetic addition operator* and *sometimes* it *acts as string concatenation operator*.
+* *If atleast 1 argument* is *string type*, then *+ operator acts as concatenation operator* and *if both arguments are number type*, then *+ operator acts as arithmetic addition operator*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        String a = "rudra";
+        int b = 10, c = 20, d = 30;
+        System.out.println(a+b+c+d);    //rudra102030
+        System.out.println(b+c+d+a);    //60rudra
+        System.out.println(b+c+a+d);    //30rudra30
+        System.out.println(b+a+c+d);    //10rudra2030
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+        String a = "rudra";
+        int b = 10, c = 20, d = 30;
+        a = b+c+d;
+        /*
+        error: incompatible types: int cannot be converted to String
+        a = b+c+d;
+               ^
+        */
+        a = a+b+c;
+        b = a+c+d;
+        /*
+        error: incompatible types: String cannot be converted to int
+        b = a+c+d;
+               ^
+        */
+        b = b+c+d;
+        System.out.println(a);  //rudra1020
+        System.out.println(b);  //60
+    }
+}
+```
+# Relational Operators (<, <=, >, >=)
+* We *can apply relational operators for every primitive type, except boolean*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(10<20);      //true
+        System.out.println('a'<10);     //false
+        System.out.println('a'<97.6);   //true
+        System.out.println('a'>'A');    //true
+        System.out.println(true>false);
+        /*
+        error: bad operand types for binary operator '>'
+        System.out.println(true>false);
+                               ^
+  first type:  boolean
+  second type: boolean
+        */
+    }
+}
+```
+* We *can not apply relational operators for object types*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("rudra">"RUDRA");
+        /*
+        error: bad operand types for binary operator '>'
+        System.out.println("rudra">"RUDRA");
+                                  ^
+  first type:  String
+  second type: String */
+    }
+}
+```
+* *Nesting of relational operators *is *not allowed*. *Otherwise*, we *will get compile time error*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(10<20<30);   //true<30
+        /*
+        error: bad operand types for binary operator '<'
+        System.out.println(10<20<30);
+                                ^
+  first type:  boolean
+  second type: int
+        */
+    }
+}
+```
+# Equality Operators (==, !=)
+* We *can apply equality operators for every primitive type including boolean type also*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(10==20);         //false
+        System.out.println('a'=='b');       //false
+        System.out.println('a'==97.0);      //true
+        System.out.println(false==false);   //true
+    }
+}
+```
+* We *can apply equality operators for object types also*. *For object references* (r1, r2), *r1==r2 => true*, *if and only if both references pointing to the same object* (reference comparison or address comparison).
+```java
+public class Main {
+    public static void main(String[] args) {
+        Thread t1 = new Thread();
+        Thread t2 = new Thread();
+        Thread t3 = t1;
+        System.out.println(t1==t2); //false
+        System.out.println(t1==t3); //true
+    }
+}
+```
+* *If we apply equality operators for object types*, then *compulsory there should be some relation between argument types* (*either child to parent or parent to child or same type*). *Otherwise*, we *will get compile time error saying incomparable types*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread();
+        Object o = new Object();
+        String s = new String("Rudra");
+        System.out.println(t==o);   //false
+        System.out.println(o==s);   //false
+        System.out.println(s==t);
+        /*
+        error: incomparable types: String and Thread
+        System.out.println(s==t);
+                            ^
+        */
+    }
+}
+```
+* *For any object reference* r,* r==null* is* always false*. But, *null==null* is *always true*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        String s = new String("rudra");
+        String t = null;
+        System.out.println(s==null);        //false
+        System.out.println(t==null);        //true
+        System.out.println(null==null);     //true
+    }
+}
+```
+## Difference Between == operator & .equals() method
+* In general, we *can use == operator for reference comparison* (address comparison) and *.equals method for content comparison*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        String s1 = new String("rudra");
+        String s2 = new String("rudra");
+        System.out.println(s1==s2);         //false
+        System.out.println(s1.equals(s2));  //true
+    }
+}
+```
 
 
 
@@ -241,6 +395,33 @@ public class Main {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# instanceof Operator
+# Bitwise Operators
+# short circuit Operators
+# type cast Operator
+# Assignment Operators
+# Conditional Operator
+# new Operator
+# [] Operator
+# Operator precedence
+# Evaluation Order of Operands
+# new Vs newInstance()
+# instanceof Vs isInstance()
+# ClassNotFoundException Vs NoclassDefFoundError
 
 
 
