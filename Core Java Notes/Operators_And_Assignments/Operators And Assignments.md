@@ -502,10 +502,67 @@ public class Main {
 * ~ is applicable for only integral types but not for boolean type.
 * ! is applicable for only boolean type but not for integral types.
 # short circuit Operators (&&, ||)
+* These are exactly same as bitwise operators (&,|) except the following differences:
 
-
-
-
+|&, \|  |&&, \|\|  |
+|---|----|
+|Both arguments should be evaluated always.|Second argument evaluation is optional.|
+|Relatively Performance is low.|Relatively Performance is high.|
+|Applicable for both boolean and integral types.|Applicable only for boolean, but not for integral types.|
+* x&&y - y will be evaluated if and only if x is true, i.e., if x is false then y won't be evaluated.
+* x||y - y will be evaluated if and only if x is false i.e., if x is true then y won't be evaluated.
+```java
+public class Main {
+    public static void main(String[] args) {
+        int x = 10, y = 15;
+        int t1 = x, t2 = y;
+        if (++t1<10 & ++t2>15) {
+            t1++;
+        } else {
+            t2++;
+        }
+        System.out.println(t1+"..."+t2);    //11...17
+        t1 = x;
+        t2 = y;
+        if (++t1<10 && ++t2>15) {
+            t1++;
+        } else {
+            t2++;
+        }
+        System.out.println(t1+"..."+t2);    //11...16
+        t1 = x;
+        t2 = y;
+        if (++t1<10 | ++t2>15) {
+            t1++;
+        } else {
+            t2++;
+        }
+        System.out.println(t1+"..."+t2);    //12...16
+        t1 = x;
+        t2 = y;
+        if (++t1<10 || ++t2>15) {
+            t1++;
+        } else {
+            t2++;
+        }
+        System.out.println(t1+"..."+t2);    //12...16
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+        int x = 10;
+        if(++x<10 && (x/0>0)){
+            System.out.println("Hello");
+        }
+        else{
+            System.out.println("Hi");   //Hi
+        }
+    }
+}
+```
+* If we replace && with &, then we will get runtime exception saying arithmetic exception division by zero.
 # type cast Operators
 
 
