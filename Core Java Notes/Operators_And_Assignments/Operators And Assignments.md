@@ -387,32 +387,131 @@ public class Main {
     }
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # instanceof Operator
-# Bitwise Operators
-# short circuit Operators
-# type cast Operator
+* We can use instance of operator to check whether the given object is of particular type or not.
+```java
+public class Main {
+    public static void main(String[] args) {
+        Object o = l.get(0);
+        if(o instanceof Student){
+            Student s = (Student)o;
+            //Perform Student specific functionality
+        }
+        else if(o instanceof Customer){
+            Customer c = (Customer)o;
+            //Perform Customer specific functionality
+        }
+    }
+}
+```
+* r instanceof x, where r is obkect reference, x is class or interface name.
+![alt text](image-1.png)
+```java
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread();
+        System.out.println(t instanceof Thread); // true
+        //Because t is Thread object
+        System.out.println(t instanceof Object); // true
+        //Because every child object is by default parent type
+        System.out.println(t instanceof Runnable); // true
+        //Because every implemented class object is by default interface type
+    }
+}
+```
+* To use instanceof operator, compulsory there should be some relation between argument types (either child to parent or parent to child or same type). Otherwise, we will get compile time error saying incompatible types.
+```java
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread();
+        System.out.println(t instanceof String);
+        /*
+        error: incompatible types: Thread cannot be converted to String
+        System.out.println(t instanceof String);
+                           ^
+        */
+    }
+}
+```
+* For any class or interface x, null instance of x is always false.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(null instanceof String);     //false
+        System.out.println(null instanceof Object);     //false
+        System.out.println(null instanceof Runnable);   //false
+    }
+}
+```
+# Bitwise Operators (&, |, ^)
+* & - AND - Returns true if and only if both arguments are true.
+* | - OR - Returns true if and only if at least one argument is true.
+* ^ - X-OR - Returns true if and only if both arguments are different.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(true&false); //false
+        System.out.println(true|false); //true
+        System.out.println(true^false); //true
+    }
+}
+```
+* We can apply these operators for integral types also.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(4&5); //4
+        System.out.println(4|5); //5
+        System.out.println(4^5); //1
+    }
+}
+```
+## Bitwise Complement Operator (~)
+* We can apply this operator only for integral types, but not for, boolean type. If we are trying to apply for boolean type, then we will get compile time error.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(~true);
+        /*
+        error: bad operand type boolean for unary operator '~'
+        System.out.println(~true);
+                           ^
+        */
+       System.out.println(~4);  //-5
+    }
+}
+```
+![alt text](image-2.png)
+* The most significant bit acts as sign bit. 0 means positive and 1 means negative number. Positive numbers will be represented directly in the memory whereas, negative numbers will be represented indirectly in the memory in 2's complement form.
+## Boolean Complement Operator(!)
+* We can apply these operator only for boolean types, but not for integral types.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(!4);
+        /*
+        error: bad operand type int for unary operator '!'
+        System.out.println(!4);
+                           ^
+        */
+       System.out.println(!false);  //true
+    }
+}
+```
+* &, |, ^ are applicable for both boolean and integral types.
+* ~ is applicable for only integral types but not for boolean type.
+* ! is applicable for only boolean type but not for integral types.
+# short circuit Operators (&&, ||)
+
+
+
+
+# type cast Operators
+
+
+
+
+
 # Assignment Operators
 # Conditional Operator
 # new Operator
