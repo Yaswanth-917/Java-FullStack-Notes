@@ -640,24 +640,140 @@ public class Main {
 }
 ```
 # Assignment Operators
-
-
-
-
-# Conditional Operator
-
-
-
-
+* There are *3 types of assignment operators*.
+1. Simple Assignment Operator
+2. Chained Assignment Operator
+3. Compound Assignment Operator
+## 1. Simple Assignment
+```java
+int x = 10;
+```
+## 2. Chained Assignment
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a, b, c, d;
+        a = b = c = d = 20;
+        System.out.println(a+"..."+b+"..."+c+"..."+d);  //20...20...20...20
+    }
+}
+```
+* We *can not perform chained assignment directly at the time of declaration*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = b = c = d = 20;
+        /*
+        error: cannot find symbol
+        int a = b = c = d = 20;
+                ^
+  symbol:   variable b
+  location: class Main
+        error: cannot find symbol
+        int a = b = c = d = 20;
+                    ^
+  symbol:   variable c
+  location: class Main
+        error: cannot find symbol
+        int a = b = c = d = 20;
+                        ^
+  symbol:   variable d
+  location: class Main
+        */
+        System.out.println(a+"..."+b+"..."+c+"..."+d);
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+        int b, c, d;
+        int a = b = c = d = 20;
+        System.out.println(a+"..."+b+"..."+c+"..."+d);  //20...20...20...20
+    }
+}
+```
+## 3. Compound Assignment
+* *Sometimes, assignment operator mixed with some other operator*, such type of assignment operators are *called compound assignment operators*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        a += 20;
+        System.out.println(a);  //30
+    }
+}
+```
+* The all *possible compound assignment operators* in java are *+=, -=, *=, /=, %=, &=, |=, ^=, >>=, >>>=, <<=*.
+* *In the case of compound assignment operators*, *internal type-casting* will be *performed automatically*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        byte b = 10;
+        b++;                    //b = (byte)(b+1)
+        System.out.println(b);  //11
+        b +=1;                  //b = (byte)(b+1)
+        System.out.println(b);  //12
+        b = b+1;                //max(int,byte,int)
+        System.out.println(b);
+        /*
+        error: incompatible types: possible lossy conversion from int to byte
+        b = b+1;
+             ^
+        */
+        byte c = 127;
+        c += 3;
+        System.out.println(c);  //-126
+       
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a, b, c, d;
+        a = b = c = d=20;
+        a+=b-=c*=d/=2;
+        System.out.println(a+"..."+b+"..."+c+"..."+d);  //-160...-180...200...10
+    }
+}
+```
+# Conditional Operator (?:)
+* The *only possible ternary operator* in java is *conditional operator*.
+>>>Syntax: condition ? value_if_true : value_if_false;
+```java
+public class Main {
+    public static void main(String[] args) {
+        int x = (10<20)?30:40;
+        System.out.println(x);  //30
+    }
+}
+```
+* We *can perform nesting of conditional operator* also.
+```java
+public class Main {
+    public static void main(String[] args) {
+        int x = (10>20)?30:((40>50)?60:70);
+        System.out.println(x);  //70
+    }
+}
+```
 # new Operator
-
-
-
-
-
-
-
+* We *can use new operator to create object*.
+```java
+Test t = new Test();
+```
+* *After creating an object*, *constructor* will be *executed to perform initialization of an object*. Hence, *constructor* is *not for creation of object* and it is *for initialization of an object*.
+* In java, we *have only new keyword* but *not delete keyword*. Because, *destruction of useless objects* is the* responsibility if garbage collector*.
 # [] Operator
+* We *can use this operator to declare and create array*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        int[] x = new int[10];
+    }
+}
+```
 # Operator precedence
 # Evaluation Order of Operands
 # new Vs newInstance()
