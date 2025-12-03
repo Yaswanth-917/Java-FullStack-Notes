@@ -6,8 +6,8 @@
 5. Equality Operators
 6. instanceof Operator
 7. bitwise Operators
-8. short circuit Operators
-9. type cast Operator
+8. Short Circuit Operators
+9. Type-Cast Operator
 10. assignment Operators
 11. conditional Operator
 12. new Operator
@@ -388,7 +388,7 @@ public class Main {
 }
 ```
 # instanceof Operator
-* We can use instance of operator to check whether the given object is of particular type or not.
+* We *can use instance of operator to check whether the given object is of particular type or not*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -404,7 +404,7 @@ public class Main {
     }
 }
 ```
-* r instanceof x, where r is obkect reference, x is class or interface name.
+* *r instanceof x*, where *r* is *object reference*, *x* is *class or interface name*.
 ![alt text](image-1.png)
 ```java
 public class Main {
@@ -419,7 +419,7 @@ public class Main {
     }
 }
 ```
-* To use instanceof operator, compulsory there should be some relation between argument types (either child to parent or parent to child or same type). Otherwise, we will get compile time error saying incompatible types.
+* *To use instanceof operator*, compulsory there *should be some relation between argument types* (either child to parent or parent to child or same type). *Otherwise*, we *will get compile time error saying incompatible types*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -433,7 +433,7 @@ public class Main {
     }
 }
 ```
-* For any class or interface x, null instance of x is always false.
+* *For any class or interface x*, *null instance of x* is *always false*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -444,9 +444,9 @@ public class Main {
 }
 ```
 # Bitwise Operators (&, |, ^)
-* & - AND - Returns true if and only if both arguments are true.
-* | - OR - Returns true if and only if at least one argument is true.
-* ^ - X-OR - Returns true if and only if both arguments are different.
+* *& - AND* - *Returns true if and only if both arguments* are *true*.
+* *| - OR* - *Returns true if and only if at least one argument* is *true*.
+* *^ - X-OR* - *Returns true if and only if both arguments* are *different*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -456,7 +456,7 @@ public class Main {
     }
 }
 ```
-* We can apply these operators for integral types also.
+* We *can apply these operators for integral types also*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -467,7 +467,7 @@ public class Main {
 }
 ```
 ## Bitwise Complement Operator (~)
-* We can apply this operator only for integral types, but not for, boolean type. If we are trying to apply for boolean type, then we will get compile time error.
+* We *can apply this operator only for integral types*, but *not for, boolean type*. If we are *trying to apply for boolean type*, then we *will get compile time error*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -482,9 +482,9 @@ public class Main {
 }
 ```
 ![alt text](image-2.png)
-* The most significant bit acts as sign bit. 0 means positive and 1 means negative number. Positive numbers will be represented directly in the memory whereas, negative numbers will be represented indirectly in the memory in 2's complement form.
+* The *most significant bit acts as sign bit*. *0* means *positive* and *1* means *negative number*. *Positive numbers* will be *represented directly in the memory* whereas, *negative numbers* will be *represented indirectly in the memory in 2's complement form*.
 ## Boolean Complement Operator(!)
-* We can apply these operator only for boolean types, but not for integral types.
+* We *can apply these operator only for boolean types*, but *not for integral types*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -498,10 +498,10 @@ public class Main {
     }
 }
 ```
-* &, |, ^ are applicable for both boolean and integral types.
-* ~ is applicable for only integral types but not for boolean type.
-* ! is applicable for only boolean type but not for integral types.
-# short circuit Operators (&&, ||)
+* *&, |, ^* are *applicable for both boolean and integral types*.
+* *~* is *applicable for only integral types* but *not for boolean type*.
+* *!* is *applicable for only boolean type* but *not for integral types*.
+# Short Circuit Operators (&&, ||)
 * These are exactly same as bitwise operators (&,|) except the following differences:
 
 |&, \|  |&&, \|\|  |
@@ -563,15 +563,100 @@ public class Main {
 }
 ```
 * If we replace && with &, then we will get runtime exception saying arithmetic exception division by zero.
-# type cast Operators
+# Type-Cast Operators
+* There are 2 types of type-casting:
+>1. Implicit type-casting
+>2. Explicit type-casting
+## Implicit Type-Casting
+* *Compiler* is *responsible to perform implicit type-casting*.
+* *Whenever* we are *assigning smaller data type value to bigger data type variable*, *implicit type casting* will be *performed*.
+* It is also known as *widening* or *upcasting*.
+* There is *no loss of information* in this type-casting.
+The following are various possible conversions where implicit type-casting will be performed.
 
+![alt text](image.png)
+```java
+public class Main {
+    public static void main(String[] args) {
+        int x = 'a';
+        System.out.println(x);  //97
+        //Compiler converts char to int automatically by implicit type-cating
+        double d = 10;
+        System.out.println(d);  //10.0
+        //Compiler converts int to double automatically by implicit type-cating
+    }
+}
+```
+## Explicit Type-Casting
+* *Programmer* is *responsible to perform explicit type-casting*.
+* *Whenever* we are *assigning bigger data type value to small data type variable*, then *explicit* type cating is *required*.
+* It is also known as *narrowing* or *downcasting*.
+* There may be a *chance of loss of information* in this typecasting.
+* The following are various possibilites where explicit type-casting is required.
 
+![alt text](image-3.png)
+```java
+public class Main {
+    public static void main(String[] args) {
+        int x = 130;
+        byte b = (byte)x;
+        System.out.println(b);  //-126
+        byte c = x;
+        System.out.println(c);
+        /*
+        error: incompatible types: possible lossy conversion from int to byte
+        byte c = x;
+                 ^
+        */
+    }
+}
+```
+* *Whenever* we are *assigning bigger data type value to the smaller data type variable by explicit type casting*, the *most significant bit will be last*. We have to *consider only least significant bits*.
 
-
-
+![alt text](image-4.png)
+```java
+public class Main {
+    public static void main(String[] args) {
+        int x = 150;
+        short s = (short)x;
+        System.out.println(s);  //150
+        byte b = (byte)x;
+        System.out.println(b);  //-106
+        
+    }
+}
+```
+* *If* we *assign floating point values to the integral types by explicit type casting*, the *digits after the decimal point will be lost*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        double d = 130.456;
+        int x = (int)d;
+        System.out.println(x);  //130
+        byte b = (byte)d;
+        System.out.println(b);  //-126
+        
+    }
+}
+```
 # Assignment Operators
+
+
+
+
 # Conditional Operator
+
+
+
+
 # new Operator
+
+
+
+
+
+
+
 # [] Operator
 # Operator precedence
 # Evaluation Order of Operands
