@@ -828,12 +828,65 @@ public class Main {
 }
 ```
 # new Vs newInstance()
-
-
-
-
-
-
+* We can use new operator to create an object, if we know class name at the beginning.
+```java
+Test t = new Test();
+Student s = new Student();
+Customer c = new Customer();
+```
+* newInstance() is a method present in class Class. We can use newInstance() to create object if we don't know class at the beginning and it is available dynamically at run time.
+```java
+class Student {    
+}
+class Customer {
+}
+public class Test {
+    public static void main(String[] args) throws Exception {
+        Object o = Class.forName(args[0]).newInstance();
+        System.out.println("Object created for: "+o.getClass().getName());
+        /*
+        java Test Student
+        Object created for: Student
+        java Test Customer
+        Object created for: Customer
+        java Test java.lang.String
+        Object created for: java.lang.String
+        */
+    }
+}
+```
+* In the case of new operator, based on our requirement we can invoke any constructor.
+```java
+Test t = new Test();
+Test t1 = new Test(10);
+Test t2 = new Test("rudra");
+```
+* But, newInstance() internally calls no argument constructor. Hence, to use new instance method, compulsory corresponding class should contain no argument constructor. Otherwiae, we will get run time exception sating InstantiationException.
+* While using new operator, at runtime, if the corresponding .class file is not available then, we will get runtime exception saying NoClassDefFoundError: Test
+```java
+Test t = new Test();
+```
+* At runtime, if Test.class not available, then we will get runtime exception saying NoClassDefFoundError: Test.
+* While using newInstance(), at runtime, if the corresponding .class file is not avaiable, then we will get runtime exception saying ClassNotFoundException.
+```java
+public class Test {
+    public static void main(String[] args) throws Exception {
+        Object o = Class.forName(args[0]).newInstance();
+        /*
+        java Test Test123
+        Exception in thread "main" java.lang.ClassNotFoundException: Test123
+         */
+    }
+}
+```
+* At runtime, if Test123.class file not available then, we will get runtime exception saying ClassNotFoundException: Test123.
+## Differences Between new and newInstance()
+|new|newInstance()|
+|---|-------------|
+|It is operator in java|It is a method present in java.lang.Class|
+|We can use new operator to create object if we know class name at the beginning|We can use new istance method to create object if we don't know class name at the beginning and it is available dynamically at runtime|
+|To use new operator, class not required to contain no argument constructor|To use newInstance(), compulsory class should contain no argument constructor, otherwise we will get runtime exception saying InstantiationException|
+|At runtime, if the corresponding .class file not available, then we will get runtime exception saying NoClassDefFoundError, which is unchecked|At runtime, if the corresponding .class file not available, then we will get runtime exception saying ClassNotFoundException, which is checked|
 # instanceof Vs isInstance()
 
 
