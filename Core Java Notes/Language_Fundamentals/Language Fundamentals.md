@@ -21,7 +21,7 @@ public class Temp {
 }
 ```
 >* *Temp* - Class name
->* *Main* - Method name
+>* *main* - Method name
 >* *String* - Predefined Java Class name
 >* *args* - Array name
 >* *x* - Variable name
