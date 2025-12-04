@@ -774,66 +774,77 @@ public class Main {
     }
 }
 ```
-# Operator precedence
+# Operator Precedence
+## 1. Unary Operators
+[], x++, x--  
+++x, --x, ~, !  
+new, \<type>
+## 2. Arithmetic Operators
+*, /, %  
++, -
+## 3. Shift Operators
+\>>, >>>, <<
+## 4. Comparison Operators
+<, <=, >, >=, instanceof
+## 5. Equality Operators
+==, !=
+## 6. Bitwise Operators
+&  
+^  
+|
+## 7. Short Circuit Operators
+&&  
+||
+## 8. Conditional Operator
+?:
+## 9. Assignment Operator
+=, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, >>>=, <<=
 # Evaluation Order of Operands
+* In java, we *have only operator precedence*, but *not operaand precedence*. *Before applying any operator*, *all operands* will be *evaluated from left to right*.
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(m1(1)+m1(2)*m1(3)/m1(4)+m1(5)*m1(6));    //32
+        /*
+        1+2*3/4+5*6
+        1+6/4+5*6
+        1+1+5/6
+        1+1+30
+        32
+        */
+    }
+    public static int m1(int i) {
+        System.out.println(i);
+        /*
+        1
+        2
+        3
+        4
+        5
+        6
+        */
+        return i;
+    }
+}
+```
 # new Vs newInstance()
+
+
+
+
+
+
 # instanceof Vs isInstance()
+
+
+
+
+
+
+
+
+
 # ClassNotFoundException Vs NoclassDefFoundError
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
