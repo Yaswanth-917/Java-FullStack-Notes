@@ -20,8 +20,8 @@ public class Temp {
     }
 }
 ```
->* *Test* - Class name
->* *Main* - Method name
+>* *Temp* - Class name
+>* *main* - Method name
 >* *String* - Predefined Java Class name
 >* *args* - Array name
 >* *x* - Variable name
