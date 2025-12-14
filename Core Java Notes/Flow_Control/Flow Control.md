@@ -2,6 +2,8 @@
 * *Flow control describes the order in which the statements will be executed* at runtime.
 
 ![alt text](image.png)
+
+---
 # Selection Statements
 ## if-else
 ```java
@@ -12,7 +14,7 @@ else {
     Action if b is false
 }
 ```
-* The *argument to* the *if statement should be boolean* type. By mistake, *if* we are* trying to provide any other type* then, we *will get compile time error*.
+* The *argument to* the *if statement should be boolean* type. By mistake, *if* we are *trying to provide any other type* then, we *will get compile time error*.
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -143,7 +145,6 @@ public class Test {
     }
 }
 ```
-
 ## switch
 * If several options are available, then it is not recommended to use nested if-else. Because, it reduces readability.
 * To handle this requirement, we should go for switch statement.

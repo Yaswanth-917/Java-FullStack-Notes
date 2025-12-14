@@ -5,20 +5,21 @@
 4. Relational Operators
 5. Equality Operators
 6. instanceof Operator
-7. bitwise Operators
+7. Bitwise Operators
 8. Short Circuit Operators
 9. Type-Cast Operator
-10. assignment Operators
-11. conditional Operator
+10. Assignment Operators
+11. Conditional Operator
 12. new Operator
 13. [] Operator
-14. operator precedence
+14. Operator Precedence
 15. Evaluation Order of Operands
 16. new Vs newInstance()
 17. instanceof Vs isInstance()
 18. ClassNotFoundException Vs NoClassDefFoundError
 
-# Increment and Decerement Operators
+---
+# Increment and Decrement Operators
 |Expression|Initial Value of x|Value of y|Final Value of x|
 |----------|:----------------:|:--------:|:--------------:|
 |y = ++x;  |10                |11        |11              |
@@ -148,6 +149,7 @@ public class Main {
 }
 ```
 
+---
 # Arithmetic Operators (+, -, *, /, %)
 * *If we apply any arithmetic operator between 2 variables* a and b, the *result type is* always *max(int, type of a, type of b)*.
 >* byte+byte = int
@@ -178,7 +180,7 @@ public class Main {
     }
 }
 ```
-* But, *in floating point arithmetic* (float and double) there *is a way to represent infinity*. For this *Float and Double classes contains following 2 constants POSITIVE_INFINTY and NEGATIVE_INFINITY*. Hence, even though result is infintiy, we won't get any arithemtic exception in floating point arithmetic.
+* But, *in floating point arithmetic* (float and double) there *is a way to represent infinity*. For this *Float and Double classes contains following 2 constants POSITIVE_INFINTY and NEGATIVE_INFINITY*. Hence, even though result is infinity, we won't get any arithemtic exception in floating point arithmetic.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -207,13 +209,14 @@ public class Main {
 }
 ```
 **Note:** *For any x value including NaN*, the *following expressions returns false*.
->* x<NaN
->* x<=NaN
->* x>NaN
->* x>=NaN
->* x==NaN
-*For any x value including NaN*, the *following expression returns true*.
->* x!=NaN
+* x<NaN
+* x<=NaN
+* x>NaN
+* x>=NaN
+* x==NaN
+
+**Note:** *For any x value including NaN*, the *following expression returns true*.
+* x!=NaN
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -233,6 +236,7 @@ public class Main {
 * It is *possible only in integral arithmetic* but *not in floating point arithmetic*.
 * The only *operators which cause Arithmetic Excetion* are */* and *%*.
 
+---
 # String Concatenation Operator (+)
 * The *only overloaded operator in java* is *+ operator*. *Sometimes* it *acts as arithmetic addition operator* and *sometimes* it *acts as string concatenation operator*.
 * *If atleast 1 argument* is *string type*, then *+ operator acts as concatenation operator* and *if both arguments are number type*, then *+ operator acts as arithmetic addition operator*.
@@ -272,6 +276,8 @@ public class Main {
     }
 }
 ```
+
+---
 # Relational Operators (<, <=, >, >=)
 * We *can apply relational operators for every primitive type, except boolean*.
 ```java
@@ -306,7 +312,7 @@ public class Main {
     }
 }
 ```
-* *Nesting of relational operators *is *not allowed*. *Otherwise*, we *will get compile time error*.
+* *Nesting of relational operators* is *not allowed*. *Otherwise*, we *will get compile time error*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -321,6 +327,8 @@ public class Main {
     }
 }
 ```
+
+---
 # Equality Operators (==, !=)
 * We *can apply equality operators for every primitive type including boolean type also*.
 ```java
@@ -363,7 +371,7 @@ public class Main {
     }
 }
 ```
-* *For any object reference* r,* r==null* is* always false*. But, *null==null* is *always true*.
+* *For any object reference *r*, r==null* is *always false*. But, *null==null* is *always true*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -387,6 +395,8 @@ public class Main {
     }
 }
 ```
+
+---
 # instanceof Operator
 * We *can use instance of operator to check whether the given object is of particular type or not*.
 ```java
@@ -443,6 +453,8 @@ public class Main {
     }
 }
 ```
+
+---
 # Bitwise Operators (&, |, ^)
 * *& - AND* - *Returns true if and only if both arguments* are *true*.
 * *| - OR* - *Returns true if and only if at least one argument* is *true*.
@@ -467,7 +479,7 @@ public class Main {
 }
 ```
 ## Bitwise Complement Operator (~)
-* We *can apply this operator only for integral types*, but *not for, boolean type*. If we are *trying to apply for boolean type*, then we *will get compile time error*.
+* We *can apply this operator only for integral types*, but *not for boolean type*. If we are *trying to apply for boolean type*, then we *will get compile time error*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -501,8 +513,10 @@ public class Main {
 * *&, |, ^* are *applicable for both boolean and integral types*.
 * *~* is *applicable for only integral types* but *not for boolean type*.
 * *!* is *applicable for only boolean type* but *not for integral types*.
+
+---
 # Short Circuit Operators (&&, ||)
-* These are exactly same as bitwise operators (&,|) except the following differences:
+* These are exactly same as bitwise operators (&, |) except the following differences:
 
 |&, \|  |&&, \|\|  |
 |---|----|
@@ -563,13 +577,15 @@ public class Main {
 }
 ```
 * If we replace && with &, then we will get runtime exception saying arithmetic exception division by zero.
+
+---
 # Type-Cast Operators
 * There are 2 types of type-casting:
->1. Implicit type-casting
->2. Explicit type-casting
+1. Implicit type-casting
+2. Explicit type-casting
 ## Implicit Type-Casting
 * *Compiler* is *responsible to perform implicit type-casting*.
-* *Whenever* we are *assigning smaller data type value to bigger data type variable*, *implicit type casting* will be *performed*.
+* *Whenever* we are *assigning smaller data type value to bigger data type variable*, *implicit type-casting* will be *performed*.
 * It is also known as *widening* or *upcasting*.
 * There is *no loss of information* in this type-casting.
 The following are various possible conversions where implicit type-casting will be performed.
@@ -580,18 +596,18 @@ public class Main {
     public static void main(String[] args) {
         int x = 'a';
         System.out.println(x);  //97
-        //Compiler converts char to int automatically by implicit type-cating
+        //Compiler converts char to int automatically by implicit type-casting
         double d = 10;
         System.out.println(d);  //10.0
-        //Compiler converts int to double automatically by implicit type-cating
+        //Compiler converts int to double automatically by implicit type-casting
     }
 }
 ```
 ## Explicit Type-Casting
 * *Programmer* is *responsible to perform explicit type-casting*.
-* *Whenever* we are *assigning bigger data type value to small data type variable*, then *explicit* type cating is *required*.
+* *Whenever* we are *assigning bigger data type value to small data type variable*, then *explicit type-casting* is *required*.
 * It is also known as *narrowing* or *downcasting*.
-* There may be a *chance of loss of information* in this typecasting.
+* There may be a *chance of loss of information* in this type-casting.
 * The following are various possibilites where explicit type-casting is required.
 
 ![alt text](image-3.png)
@@ -611,7 +627,7 @@ public class Main {
     }
 }
 ```
-* *Whenever* we are *assigning bigger data type value to the smaller data type variable by explicit type casting*, the *most significant bit will be last*. We have to *consider only least significant bits*.
+* *Whenever* we are *assigning bigger data type value to the smaller data type variable by explicit type-casting*, the *most significant bit will be last*. We have to *consider only least significant bits*.
 
 ![alt text](image-4.png)
 ```java
@@ -626,7 +642,7 @@ public class Main {
     }
 }
 ```
-* *If* we *assign floating point values to the integral types by explicit type casting*, the *digits after the decimal point will be lost*.
+* *If* we *assign floating point values to the integral types by explicit type-casting*, the *digits after the decimal point will be lost*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -639,6 +655,8 @@ public class Main {
     }
 }
 ```
+
+---
 # Assignment Operators
 * There are *3 types of assignment operators*.
 1. Simple Assignment Operator
@@ -704,7 +722,7 @@ public class Main {
     }
 }
 ```
-* The all *possible compound assignment operators* in java are *+=, -=, *=, /=, %=, &=, |=, ^=, >>=, >>>=, <<=*.
+* The all *possible compound assignment operators* in java are +=, -=, *=, /=, %=, &=, |=, ^=, >>=, >>>=, <<=.
 * *In the case of compound assignment operators*, *internal type-casting* will be *performed automatically*.
 ```java
 public class Main {
@@ -738,9 +756,11 @@ public class Main {
     }
 }
 ```
+
+---
 # Conditional Operator (?:)
 * The *only possible ternary operator* in java is *conditional operator*.
->>>Syntax: condition ? value_if_true : value_if_false;
+>>>**Syntax:** condition ? value_if_true : value_if_false;
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -758,13 +778,17 @@ public class Main {
     }
 }
 ```
+
+---
 # new Operator
 * We *can use new operator to create object*.
 ```java
 Test t = new Test();
 ```
 * *After creating an object*, *constructor* will be *executed to perform initialization of an object*. Hence, *constructor* is *not for creation of object* and it is *for initialization of an object*.
-* In java, we *have only new keyword* but *not delete keyword*. Because, *destruction of useless objects* is the* responsibility if garbage collector*.
+* In java, we *have only new keyword* but *not delete keyword*. Because, *destruction of useless objects* is the *responsibility of garbage collector*.
+
+---
 # [] Operator
 * We *can use this operator to declare and create array*.
 ```java
@@ -774,6 +798,8 @@ public class Main {
     }
 }
 ```
+
+---
 # Operator Precedence
 ## 1. Unary Operators
 [], x++, x--  
@@ -800,7 +826,7 @@ new, \<type>
 ## 9. Assignment Operator
 =, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, >>>=, <<=
 # Evaluation Order of Operands
-* In java, we *have only operator precedence*, but *not operaand precedence*. *Before applying any operator*, *all operands* will be *evaluated from left to right*.
+* In java, we *have only operator precedence*, but *not operand precedence*. *Before applying any operator*, *all operands* will be *evaluated from left to right*.
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -827,6 +853,8 @@ public class Main {
     }
 }
 ```
+
+---
 # new Vs newInstance()
 * We *can use new operator to create an object*, *if we know class name at the beginning*.
 ```java
@@ -834,7 +862,7 @@ Test t = new Test();
 Student s = new Student();
 Customer c = new Customer();
 ```
-* *newInstance()* is a m*ethod present in class Class*. We ** if we don't know class at the beginning* and it is *available dynamically at run time*.
+* *newInstance()* is a m*ethod present in class Class*. *If we don't know class at the beginning* and it is *available dynamically at run time*.
 ```java
 class Student {    
 }
@@ -884,9 +912,11 @@ public class Test {
 |new|newInstance()|
 |---|-------------|
 |It is operator in java|It is a method present in java.lang.Class|
-|We can use new operator to create object if we know class name at the beginning|We can use new istance method to create object if we don't know class name at the beginning and it is available dynamically at runtime|
+|We can use new operator to create object if we know class name at the beginning|We can use newInstance() method to create object if we don't know class name at the beginning and it is available dynamically at runtime|
 |To use new operator, class not required to contain no argument constructor|To use newInstance(), compulsory class should contain no argument constructor, otherwise we will get runtime exception saying InstantiationException|
 |At runtime, if the corresponding .class file not available, then we will get runtime exception saying NoClassDefFoundError, which is unchecked|At runtime, if the corresponding .class file not available, then we will get runtime exception saying ClassNotFoundException, which is checked|
+
+---
 # instanceof Vs isInstance()
 * *instanceof* is an *operator in java*. We *can use instanceof to check whether the given object is of particular type or not* and we *know the type at the beginning*.
 ```java
@@ -914,6 +944,8 @@ public class Test {
 }
 ```
 * *isInstance()* is *method equivalent of instanceof operator*.
+
+---
 # ClassNotFoundException Vs NoClassDefFoundError
 * *For hard-coded class names at runtime, if the corresponding .class file is not available then we will get runtime exception saying NoClassDefFoundError, which is unchecked*.
 ```java
@@ -933,3 +965,4 @@ public class Test {
 }
 ```
 * At runtime if Test.class file is not available, then we will get runtime exception saying ClassNotFoundError: Student
+---
