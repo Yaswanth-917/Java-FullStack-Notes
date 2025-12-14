@@ -1,17 +1,17 @@
 # Language Fundamentals
->1. Identifiers
->2. Reserved Words
->3. Data Types
->4. Literals
->5. Arrays
->6. Type Of Variables
->7. var-arg Methods
->8. main Method
->9. Command Line Arguments
->10. Java Coding Standards
+1. Identifiers
+2. Reserved Words
+3. Data Types
+4. Literals
+5. Arrays
+6. Type Of Variables
+7. var-arg Methods
+8. main Method
+9. Command Line Arguments
+10. Java Coding Standards
 ---
 # Identifiers
-* A name in java program is considered as **Identifier** which can be *used for identification purpose*.
+* A name in java program is considered as *Identifier* which can be *used for identification purpose*.
 * It can be a *Class name, Method name, Variable name or Label name*.
 ```java
 public class Temp {
@@ -27,23 +27,20 @@ public class Temp {
 >* *x* - Variable name
 
 ## Rules For Defining Java Identifiers
->1. The only allowed characters in java identifiers are:
->>* a to z
->>* A to Z
->>* 0 to 9
->>* $
->>* _
+1. The only allowed characters in java identifiers are:
+>* a to z
+>* A to Z
+>* 0 to 9
+>* $
+>* _
 
->>If we are *using any other character*, we will *get compile time error*.
->>>**Ex:**
->>>>total_number ✔  
->>>>total# ❌
->2. Identifiers can not starts with digit.
->>>**Ex:**
->>>>total123 ✔  
->>>>123total ❌
->3. Java identifiers are *case sensitive*. Ofcourse, Java language itself is treated as *case sensitive programming language*.
->>>**Ex:**
+* If we are *using any other characters*, we will *get compile time error*.
+>* total_number ✔  
+>* total# ❌
+2. *Identifiers can not starts with digit*.
+>* total123 ✔  
+>* 123total ❌
+3. Java identifiers are *case sensitive*. Ofcourse, Java language itself is treated as *case sensitive programming language*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -53,9 +50,8 @@ public class Temp {
     }
 }
 ```
->4. There is *no length limit for java identifiers*. But, it is not recommended to take too lengthy identifiers.
->5. We *can not use reserved words as identifiers*.
->>>**Ex:**
+4. There is *no length limit for java identifiers*. But, it is *not recommended to take too lengthy identifiers*.
+5. We *can not use reserved words as identifiers*.
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -64,8 +60,7 @@ public class Temp {
     }
 }
  ```
->6. All *predefined java class names and interface names* we can *use as identifiers*. 
->>>**Ex:**
+6. All *predefined java class names and interface names* we can *use as identifiers*. 
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -76,23 +71,25 @@ public class Temp {
     }
 }
 ```
->>Even though it is *valid*, but it is *not a good programming practice*. Because, it *reduces readability and creates confusion*.
+* Even though it is *valid*, but it is *not a good programming practice*. Because, it *reduces readability and creates confusion*.
 
 Q1. Which of the following are valid java identifiers
->>>* total_number ✔
->>>* total# ❌
->>>* 123total ❌
->>>* total123 ✔
->>>* ca$h ✔
->>>* $__$____$ ✔
->>>* all@hands ❌
->>>* Java2Share ✔
->>>* Integer ✔
->>>* Int ✔
->>>* int ❌
+* total_number ✔
+* total# ❌
+* 123total ❌
+* total123 ✔
+* ca$h ✔
+* $__$____$ ✔
+* all@hands ❌
+* Java2Share ✔
+* Integer ✔
+* Int ✔
+* int ❌
+---
 # Reserved Words
 * In java some *words are reserved to represent some meaning or functionality* are called *Reserved Words*.
-![alt text](image.png)
+
+![alt text](image-12.png)
 ## Keywords For Datatypes (8):
 >* byte
 >* short
@@ -163,7 +160,6 @@ Note: *goto* and *const* are *unused keywords*. If we are *trying to use*, we *w
 ## enum Keyword:
 >* It is released in version 1.5
 >* We can use enum to define a group of named constants.
->**Ex:**
 ```java
  enum month{
         Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
@@ -183,27 +179,28 @@ Note: *goto* and *const* are *unused keywords*. If we are *trying to use*, we *w
 * *implements* but not implement
 * *import* but not imports
 * *const* but not constant
+
 Q1. which of the following list contains only java reserved words?
->>* new, ~~delete~~
->>* goto, ~~constant~~
->>* break, continue, return, ~~exit~~
->>* final, finally, ~~finalize~~
->>* throw, throws, ~~thrown~~
->>* ~~notify, notifyall~~
->>* implements, extends, ~~imports~~
->>* ~~sizeof~~, instanceof
->>* ~~instanceOf, strictFp~~
->>* byte, short, ~~Int~~
->>* None of the above ✔
+* new, ~~delete~~
+* goto, ~~constant~~
+* break, continue, return, ~~exit~~
+* final, finally, ~~finalize~~
+* throw, throws, ~~thrown~~
+* ~~notify, notifyall~~
+* implements, extends, ~~imports~~
+* ~~sizeof~~, instanceof
+* ~~instanceOf, strictFp~~
+* byte, short, ~~Int~~
+* None of the above ✔
 
 Q2. Which of the following are java reserved words?
->>* public ✔
->>* static ✔
->>* void ✔
->>* main - name of the method
->>* String - its a predefined class
->>* args  -  name of the variable
-
+* public ✔
+* static ✔
+* void ✔
+* main - name of the method
+* String - its a predefined class
+* args  -  name of the variable
+---
 # Data Types
 * In java, every variable and every expression has some type.
 * Each and every data type is clearly defined.
@@ -404,6 +401,8 @@ public class Temp {
     }
 }
 ```
+
+---
 # Literals
 * A *constant value* which can be *assigned to the variable* is called literal.  
 **Ex:**  
@@ -859,16 +858,17 @@ public class Temp {
 * *short data type can not be assigned to char*. Because, short data *can not hold maximum value of char*.
 * *char data type can not be assigned to short*. Because, char data *can not hold -ve sign*.
 
+---
 # Arrays
->1. Introduction
->2. Array declaration
->3. Array creation
->4. Array initialization
->5. Array declaration, creation, initialization in a single line
->6. length vs length()
->7. Anonymous arrays
->8. Array element assignments
->9. Array variable assignments
+1. Introduction
+2. Array declaration
+3. Array creation
+4. Array initialization
+5. Array declaration, creation, initialization in a single line
+6. length vs length()
+7. Anonymous arrays
+8. Array element assignments
+9. Array variable assignments
 ## Introduction
 * An *array* is an *indexed collection of fixed number of homogenous data elements*.
 * The *main advantage* of array is we *can represent huge number of values by using single variable*. So that, *readability of the code will be improved*.
@@ -967,7 +967,6 @@ public class Temp {
 ```
 ## Array Creation
 * Every *array in java* is *an object only*. Hence, we *can create array* by *using new operator*.
-**Ex:**
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -975,7 +974,7 @@ public class Temp {
     }
 }
 ```
->>>>>>>>>![alt text](image-4.png)
+![alt text](image-4.png)
 * For *every array type*, *corresponding classes are available* and these classes *are part of java language* and *not available to the programmer level*.
 ```java
 public class Temp {
@@ -1016,7 +1015,6 @@ public class Temp {
 }
 ```
 3. If we are *trying to specify array size with some negative int value*, then we will *get runtime exception saying negative array size exception*.
-**Ex:**
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1029,7 +1027,6 @@ public class Temp {
 }
 ```
 4. To *specify array size*, the *allowed data types are byte, short, char, int*. If we are *trying to specify any other type*, then we wil *get compile time error*.
-**Ex:**
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1066,6 +1063,7 @@ public class Temp {
 ### 2-Dimensional Array Creation
 * In java, *2-D array not implemented* by *using matrix style*. *Sun people* followed *array of arrays approach for multi-dimensional array creation*.
 * The *main advantage* of this approach is *memory utilization will be improved*.
+
 **Ex1: Memory Structure and Corresponding Java Code**
 ```java
 public class Temp {
@@ -1076,7 +1074,7 @@ public class Temp {
     }
 }
 ```
-**Ex2: To create 2D Array of various sizes**
+**Ex2: To create 2D Array of Various Sizes**
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1090,16 +1088,16 @@ public class Temp {
 }
 ```
 Q1. Which of the following array declarations are valid?
->* int[] a = new int[];            ❌    
->* int[] a = new int[3];           ✔
->* int[][] a = new int[][];        ❌
->* int[][] a = new int[3][];       ✔
->* int[][] a = new int[][4];       ❌
->* int[][] a = new int[3][4];      ✔
->* int[][][] a = new int[3][4][5]; ✔
->* int[][][] a = new int[3][4][];  ✔
->* int[][][] a = new int[3][][5];  ❌
->* int[][][] a = new int[][4][5];  ❌
+* int[] a = new int[];            ❌    
+* int[] a = new int[3];           ✔
+* int[][] a = new int[][];        ❌
+* int[][] a = new int[3][];       ✔
+* int[][] a = new int[][4];       ❌
+* int[][] a = new int[3][4];      ✔
+* int[][][] a = new int[3][4][5]; ✔
+* int[][][] a = new int[3][4][];  ✔
+* int[][][] a = new int[3][][5];  ❌
+* int[][][] a = new int[][4][5];  ❌
 ## Array Initialization
 * *Once we creates an array*, every *element by default initialized with default values*.
 ```java
@@ -1151,7 +1149,7 @@ public class Temp {
     }
 }
 ```
->>>>![alt text](image-5.png)
+![alt text](image-5.png)
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1208,7 +1206,7 @@ public class Temp {
     }
 }
 ```
->>>>>>>![alt text](image-6.png)
+![alt text](image-6.png)
 ```java
 public class Temp {
     public static void main(String[] args) {
@@ -1353,16 +1351,16 @@ new[][] {{10,20},{30,40,50}};
 int[] x = new int[] {10,20,30};
 ```
 ```java
-public class Temp {
+public class Test {
     public static void main(String[] args) {
-        Sum(new int[]{10,20,30,40});    //100
+        Sum(new int[] { 10, 20, 30, 40 });
     }
     public static void Sum(int[] x) {
         int total = 0;
-        for(int y:x){
-            total+=y;
+        for (int y : x) {
+            total += y;
         }
-        System.out.println("The sum: "+total);
+        System.out.println("The sum: " + total);    //The sum: 100
     }
 }
 ```
@@ -1579,18 +1577,19 @@ public class Temp {
 ```
 ![alt text](image-8.png)
 
+---
 # Types of Variables
 ## Division 1
 * Based on type of value represented by a variable, all variables are divided into 2 types:
->>1. *Primitive variables* can be used to *represent primitive values*.
->>>>>int x = 10;
->>2. *Reference variables* can be used to *refer objects*.
->>>>>Student s = new Student();
+>1. *Primitive variables* can be used to *represent primitive values*.
+>>>>int x = 10;
+>2. *Reference variables* can be used to *refer objects*.
+>>>>Student s = new Student();
 ## Division 2
 * Based on position of declaration and behavior, all variables are divided into 3 types:
 >>1. Instance variables
 >>2. Static variables
->>3. Local Variables
+>>3. Local variables
 ### Instance Variables
 * If the *value of a variable is varied from object to object*, such type of variables are called *instance variables*.
 * For *every object*, a *separate copy of instance variables will be created*.
@@ -1702,7 +1701,7 @@ class Temp{
     }
 }
 ```
->>>>>![alt text](image-9.png)
+![alt text](image-9.png)
 ### Local Variables
 * Sometimes *to meet temporary requirements of the programmer*, we *can declare variables inside a method or block or constructor*. Such type of variables are called *local variables or temporary variables or stack variables or automatic variables*.
 * *Local variables* will be *stored inside the stack memory*.
@@ -1950,6 +1949,8 @@ public class Temp {
 }
 ```
 * Once, we *creates an array*, *every array element by default initialized with default values irrespective of whether it is instance or static or local array*.
+
+---
 # var-arg Methods (Variable number of Argument Methods)
 * *Until 1.4 version*, we *can not declare a method with variable number of arguments*. *If there is a change in number of arguments*, compulsory we *should go for new method*. It *increases length of the code* and *reduces the readability*.
 * *To overcome* this problem, *SUN people introduced var-arg methods in 1.5 version*. According to this, we *can declare a method which can take variable number of arguments*. Such type of methods are called var-arg methods.
@@ -1994,16 +1995,18 @@ Q1. Which of the following are valid var-arg method declarations?
 ## Case 2
 * We *can mix var-arg parameter with normal parameter*.
 >>>m1(int x, int...y)
+
 >>>m1(String x, double... y)
 ## Case 3
 * *If we mix normal parameter with var-arg parameter*, then *var-arg parameter should be last parameter*.
 >>>m1(double... d, String s)    ❌
+
 >>>m1(char ch, String s)        ✔
 ## Case 4
 * *Inside var-arg method*, we *can take only 1 var-arg parameter* and we *can not take more than 1 var-arg parameter*.
 >>>m1(int... x, double... d) ❌
 ## Case 5
-* *Inside a class*, we *can not declare var-arg method* and *corresponding 1D arra method simultaneously*. Otherwise we will *get compile time error*.
+* *Inside a class*, we *can not declare var-arg method* and *corresponding 1D array method simultaneously*. Otherwise we will *get compile time error*.
 ```java
 public class Temp {
     public static void m1(int... x) {
@@ -2040,6 +2043,7 @@ public class Temp {
 ### Case 1
 * *Wherever 1D array present*, we *can replace with var-arg parameter*.
 >>>m1(int[] x) == m1(int...x)
+
 >>>main(String[] args) == main(String... args)
 ### Case 2
 * *Wherever var-arg parameter present*, we *can not replace with 1D array*.
@@ -2068,7 +2072,9 @@ public class Temp {
     }
 }
 ```
-# main Method
+
+---
+# main() Method
 * *Whether class contains main() or not, and whether main method is declared according to requirement or not, these things won't be checked by compiler.*
 * *At run time*, *JVM* is *responsible to check these things*. *If JVM unable to find main()*, then we *will get run time exception saying "No such method error: main"*.
 ```java
@@ -2081,7 +2087,9 @@ public class Temp {
 }
 ```
 * At run time, JVM always searches for the main() with the following prototype.
->>>public static void main(String[] args)
+```java
+public static void main(String[] args)
+```
 >* public - To call by JVM from anywhere
 >* static - Without existing Object also JVM has to call this method
 >* void - main() method won't return anything to JVM
@@ -2245,6 +2253,8 @@ public class Temp {
 ![alt text](image-11.png)
 * *Without writing main()*, it is *possible to print statements to the console using static block*. But, *this rule is applicable until 1.6 version*.
 * *From 1.7 version*, it is *impossible to print statements to the console without writing main() method*.
+
+---
 # Command Line Arguments
 * The *arguments* which are *passing from command prompt* are called *command line arguments*.
 * *With these command line arguments, JVM* will *create an array and by passing that array as argument*, *JVM* will *call main()*.
@@ -2342,6 +2352,7 @@ public class Temp {
 }
 ```
 
+---
 # Java Coding Standards
 * Whenever we are writing java code, it is *highly recommended to follow coding standards*. Whenever we are *writing any component, it's name should reflect the purpose of that component (functionality)*.
 * The *main advantage* of this approach is *readability and maintainability of the code will be improved*.
